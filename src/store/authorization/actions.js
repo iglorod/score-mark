@@ -99,25 +99,6 @@ export const resetTokenTimer = () => { //set token auto-refreshing
   }
 }
 
-export const postUserDataActionCreator = (createdUser, newUser) => {
-  return dispatch => {
-    const username = newUser.email.split('@')[0];
-
-    const user = {
-      localId: createdUser.localId,
-      username: username,
-    }
-
-    axios.post(`${process.env.REACT_APP_FIREBASE_DATABASE}/users.json/?auth=${createdUser.idToken}`, user)
-      .then(() => {
-        createdUser.username = username;
-        dispatch(loginActionCreator(createdUser))
-        dispatch(resetTokenTimer());
-      })
-      .catch(error => dispatch(authErrorActionCreator(error)))
-  }
-}
-
 export const signUpActionCreator = (newUser) => {
   return dispatch => {
     dispatch(authStartActionCreator());
@@ -125,12 +106,14 @@ export const signUpActionCreator = (newUser) => {
     const authData = {
       email: newUser.email,
       password: newUser.password,
+      displayName: newUser.login,
       returnSecureToken: true
     }
 
     axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASE_KEY}`, authData)
       .then(response => {
-        // dispatch(postProfileDataActionCreator(response.data, newUser));
+        dispatch(loginActionCreator(response.data));
+        dispatch(resetTokenTimer());
       })
       .catch(error => dispatch(authErrorActionCreator(error)))
   }
@@ -147,7 +130,8 @@ export const signInActionCreator = (userData, rememberMe) => {
     }
     axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_KEY}`, authData)
       .then(response => {
-        // dispatch(setUserTypeActionCreator(response.data, rememberMe));
+        dispatch(loginActionCreator(response.data, rememberMe));
+        dispatch(resetTokenTimer());
       })
       .catch(error => dispatch(authErrorActionCreator(error)))
   }

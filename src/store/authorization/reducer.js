@@ -5,8 +5,7 @@ import { saveToLocalStorage, getDataFromLocalStorage, clearLocalStorage } from '
 const initialState = {
   localId: null,
   email: null,
-  isBand: false,
-  username: '',
+  displayName: '',
   image: '',
   idToken: null,
   refreshToken: null,
@@ -15,7 +14,6 @@ const initialState = {
   loading: true,
   submitting: false,
   errorMessage: null,
-  isAdmin: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -61,9 +59,10 @@ const reducer = (state = initialState, action) => {
         submitting: false,
       }
     }
+
     case actionTypes.LOGIN: {
       clearLocalStorage([...Object.keys(initialState)]);
-      if (action.rememberMe/* && !action.userData.isAdmin*/) {
+      if (action.rememberMe) {
         saveToLocalStorage(action.userData);
       }
 
@@ -74,9 +73,7 @@ const reducer = (state = initialState, action) => {
         loading: false,
         localId: action.userData.localId,
         email: action.userData.email,
-        isAdmin: action.userData.isAdmin || false,
-        isBand: action.userData.isBand || false,
-        username: action.userData.username || '',
+        displayName: action.userData.displayName,
         image: action.userData.image || '',
         idToken: action.userData.idToken,
         refreshToken: action.userData.refreshToken,
