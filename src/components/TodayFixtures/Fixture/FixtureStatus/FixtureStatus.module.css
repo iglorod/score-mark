@@ -1,0 +1,14 @@
+.score {
+  color: #fff;
+  font-size: 20px;
+}
+
+.finished {
+  font-size: 14px;
+  color: #ff5f5f;
+}
+
+.waited {
+  font-size: 14px;
+  color: #00b700;
+}

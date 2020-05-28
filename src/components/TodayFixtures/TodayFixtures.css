@@ -1,0 +1,18 @@
+.today-fixtures {
+  color: #fff;
+  height: 130px;
+  padding: 20px 50px 40px;
+  background: #000;
+}
+
+.today-fixtures>div, .today-fixtures .slick-slider.slick-initialized {
+  height: 100%;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff !important;
+}
+
+.slick-dots li button:before {
+  color: #fff !important;
+}

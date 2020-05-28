@@ -18,7 +18,7 @@ const LayoutComponent = (props) => {
 
   let content = (
     <Layout>
-      <Layout style={{ padding: '24px' }}>
+      <Layout>
         <Content />
       </Layout>
     </Layout>

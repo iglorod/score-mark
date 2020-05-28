@@ -1,0 +1,28 @@
+.dateArea {
+  display: flex;
+}
+
+.fixtureDate {
+  color: #fff !important;
+  font-size: 12px;
+  transition: all .1s;
+}
+
+.fixtureDate:hover {
+  color: rgb(214, 214, 214) !important;
+}
+
+.fixtureLeague {
+  font-size: 11px;
+  color: rgb(226, 226, 226) !important;
+  max-width: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  margin: auto;
+}
+
+.fixtureLeague:hover {
+  color: #f57922 !important;
+}

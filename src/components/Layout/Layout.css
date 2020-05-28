@@ -2,36 +2,9 @@
   min-height: 100vh !important;
 }
 
-.header {
-  font-family: 'Roboto Condensed', sans-serif;
-  background: #f57922 !important;
-}
-
 .content-layout-background {
-  padding: 24px;
   margin: 0;
   background: #fff;
-}
-
-.header .logo {
-  height: 100%;
-  float: left;
-}
-
-.header .logo img {
-  height: 90%;
-}
-
-.header .nav-actions {
-  padding: 0 20px;
-  float: left;
-  display: flex;
-}
-
-.header .auth-actions {
-  padding: 0 20px;
-  float: right;
-  display: flex;
 }
 
 /* ant-design styles overwrite */
@@ -129,7 +102,7 @@
 }
 
 .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled), .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
-  background-color: #ffb886 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* ant-design styles overwrite */
