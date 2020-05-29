@@ -1,0 +1,30 @@
+.teamForm, .teamFormTitle {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.largeTable, .mobileTable {
+  text-align: center;
+}
+
+.mobileTable table {
+  font-size: 12px !important;
+}
+
+.mobileTable th, .mobileTable td {
+  padding: 13px !important;
+}
+
+.tableTitle {
+  float: left;
+  text-align: left;
+}
+
+.leagueName {
+  font-size: 18px;
+}
+
+.leagueDescription {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}

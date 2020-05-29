@@ -59,7 +59,7 @@ const Leagues = (props) => {
 
     if (targetOption.isLeaf === undefined) {
       props.history.push({
-        pathname: '/fixtures',
+        pathname: '/league',
         state: {
           leagueId: targetOption.value,
         }

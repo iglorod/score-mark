@@ -1,0 +1,19 @@
+.clubLogo {
+  margin-right: 5px;
+  width: 30px;
+}
+
+.clubName {
+  color: rgba(0, 0, 0, 0.65) !important;
+  transition: all .1s;
+}
+
+.clubName:hover {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+
+@media(max-width: 768px) {
+  .clubName {
+    display: none;
+  }
+}

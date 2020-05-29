@@ -1,0 +1,8 @@
+.result {
+  margin: 0 5px !important;
+  cursor: default;
+}
+
+.result:hover {
+  opacity: .7;
+}
