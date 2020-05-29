@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 
 import classes from '../Team.module.css';
 
@@ -9,7 +8,7 @@ const HomeTeam = ({ fixture }) => {
     <div>
       <div className={classes.dateArea}>
         <div>
-          <img src={fixture.homeTeam.logo} width={25} alt={'home'} />
+          <img src={fixture.homeTeam.logo} height={35} alt={'home'} />
         </div>
         <div>
           <Link
@@ -24,21 +23,7 @@ const HomeTeam = ({ fixture }) => {
           </Link>
         </div>
       </div>
-      <div>
-        <Link
-          className={classes.fixtureLeague}
-          to={{
-            pathname: '/league',
-            state: {
-              id: fixture.league_id,
-            }
-          }}>
-          {fixture.league.name}
-        </Link>
-      </div>
-      <div>
-      {moment(fixture.event_timestamp * 1000).format('hh:mm a')}
-      </div>
+      <div className={classes.additionalData}>{fixture.round}</div>
     </div>
   )
 }

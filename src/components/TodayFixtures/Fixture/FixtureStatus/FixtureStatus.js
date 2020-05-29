@@ -8,7 +8,7 @@ const FixtureStatus = ({ fixture }) => {
       <div className={classes.score}>
         {fixture.goalsHomeTeam} - {fixture.goalsAwayTeam}
       </div>
-      <div className={fixture.status.includes('Finished') ? classes.finished : classes.waited}>
+      <div className={fixture.statusShort === 'FT' ? classes.finished : classes.waited}>
         {fixture.status}
       </div>
     </div>

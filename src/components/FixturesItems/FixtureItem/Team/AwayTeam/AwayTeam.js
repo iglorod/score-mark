@@ -1,27 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 
 import classes from '../Team.module.css';
 
-const HomeTeam = ({ fixture }) => {
+const AwayTeam = ({ fixture }) => {
   return (
     <div>
       <div className={classes.dateArea}>
-        <div>
-          <img src={fixture.homeTeam.logo} width={25} alt={'home'} />
-        </div>
         <div>
           <Link
             className={classes.fixtureDate}
             to={{
               pathname: '/team',
               state: {
-                id: fixture.homeTeam.team_id,
+                id: fixture.awayTeam.team_id,
               }
             }}>
-            {fixture.homeTeam.team_name}
+            {fixture.awayTeam.team_name}
           </Link>
+        </div>
+        <div>
+          <img src={fixture.awayTeam.logo} height={35} alt={'home'} />
         </div>
       </div>
       <div>
@@ -34,13 +33,11 @@ const HomeTeam = ({ fixture }) => {
             }
           }}>
           {fixture.league.name}
+          <img src={fixture.league.logo} width={25} alt={'league'} />
         </Link>
-      </div>
-      <div>
-      {moment(fixture.event_timestamp * 1000).format('hh:mm a')}
       </div>
     </div>
   )
 }
 
-export default HomeTeam;
+export default AwayTeam;

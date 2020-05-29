@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 import { Cascader, DatePicker } from 'antd';
 import { CaretDownOutlined } from '@ant-design/icons';
@@ -18,14 +19,6 @@ const Fixtures = (props) => {
   });
   const [fromLeague, setFromLeague] = useState({ label: 'From league', value: 'from league', isLeaf: false, });
 
-  useEffect(() => {
-    if (!props.cascaderIsOpen) {
-      closeDatePicker();
-      closeDatePicker();
-      closeDatePicker();
-    }
-  }, [props.cascaderIsOpen])
-
   const fetchCountries = (targetOption) => {
     axios.get('https://restcountries.eu/rest/v2/all?fields=nativeName;alpha2Code')
       .then(response => response.data)
@@ -38,6 +31,11 @@ const Fixtures = (props) => {
       .then(() => setFromLeague(targetOption))
       .then(() => console.log(fromLeague))
       .catch(error => console.log(error))
+  }
+
+  const closeDropdown = () => {
+    closeDatePicker();
+    setTimeout(() => props.closeCascader(), 300);
   }
 
   function DatePickerItem({ onChange, onClick }) {
@@ -95,7 +93,6 @@ const Fixtures = (props) => {
   };
 
   const closeDatePicker = () => {
-    console.log('close');
     const datePickerClone = { ...fromDateItem };
     datePickerClone.label = <div onClick={openDatePicker}>From date</div>;
     setFromDateItem({ ...datePickerClone });
@@ -109,28 +106,45 @@ const Fixtures = (props) => {
   }
 
   function onDatePicked(date) {
-    console.log('date', date);
+    props.history.push({
+      pathname: '/fixtures',
+      state: { date: date._d }
+    })
+
+    closeDropdown();
   }
 
   const onChange = (value, selectedOptions) => {
     const targetOption = { ...selectedOptions[selectedOptions.length - 1] };
     if (targetOption.isLeaf === undefined) {
-      // props.push()     //load league component
-      props.closeCascader();
+      props.history.push({
+        pathname: '/fixtures',
+        state: {
+          inPlay: targetOption.value === 'in play' ? true : false,
+          leagueId: targetOption.value,
+        }
+      })
+
+      closeDropdown();
     }
   }
 
   const togglePopup = () => {
     if (props.cascaderIsOpen) {
-      props.closeCascader();
+      closeDropdown();
     } else {
       props.openCascader();
     }
   }
 
   return (
-    <>
-      <div className={'action-button'} onClick={togglePopup}><CaretDownOutlined /> Fixtures</div>
+    <div>
+      <div
+        className={'action-button'}
+        onClick={togglePopup}
+      >
+        <CaretDownOutlined /> {'Fixtures'}
+      </div>
       <Cascader
         ref={dropDown}
         className={'popup-input'}
@@ -140,8 +154,8 @@ const Fixtures = (props) => {
         onChange={onChange}
         changeOnSelect
       />
-    </>
+    </div>
   )
 }
 
-export default Fixtures;
+export default withRouter(Fixtures);

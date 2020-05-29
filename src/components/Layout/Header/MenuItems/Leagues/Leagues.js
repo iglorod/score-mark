@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 import { Cascader } from 'antd';
 import { CaretDownOutlined } from '@ant-design/icons';
@@ -10,7 +11,6 @@ import '../MenuItems.css';
 const Leagues = (props) => {
   const [countries, setCountries] = useState([{ label: 'Countries', value: null, loading: true }]);
 
-  const dropDown = useRef(null);
 
   useEffect(() => {
     axios.get('https://restcountries.eu/rest/v2/all?fields=nativeName;alpha2Code')
@@ -39,7 +39,7 @@ const Leagues = (props) => {
   const loadData = selectedOptions => {
     const targetOption = { ...selectedOptions[selectedOptions.length - 1] };
     targetOption.loading = true;
-    updateCountryLoadState({...targetOption});
+    updateCountryLoadState({ ...targetOption });
 
     //axios.get(`https://api-football-v1.p.rapidapi.com/v2/leagues/country/england/2018${'key'}`)
     // .then(response => response.data.api.results.leages)
@@ -58,7 +58,12 @@ const Leagues = (props) => {
     const targetOption = selectedOptions[selectedOptions.length - 1];
 
     if (targetOption.isLeaf === undefined) {
-      // props.push()     //load league component
+      props.history.push({
+        pathname: '/fixtures',
+        state: {
+          leagueId: targetOption.value,
+        }
+      })
       props.closeCascader();
     }
   };
@@ -72,10 +77,14 @@ const Leagues = (props) => {
   }
 
   return (
-    <>
-      <div className={'action-button'} onClick={togglePopup}><CaretDownOutlined /> Leagues</div>
+    <div>
+      <div
+        className={'action-button'}
+        onClick={togglePopup}
+      >
+        <CaretDownOutlined /> {'Leagues'}
+      </div>
       <Cascader
-        ref={dropDown}
         className={'popup-input'}
         popupVisible={props.cascaderIsOpen}
         options={countries}
@@ -83,8 +92,8 @@ const Leagues = (props) => {
         onChange={onChange}
         changeOnSelect
       />
-    </>
+    </div>
   )
 }
 
-export default Leagues;
+export default withRouter(Leagues);
