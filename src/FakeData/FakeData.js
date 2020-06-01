@@ -1040,3 +1040,319 @@ export const leagueStatnding = () => {
     }, 1000)
   })
 }
+
+export const topScorers = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              topscorers: [
+                {
+                  'player_id': 278,
+                  'player_name': 'K. Mbappé',
+                  'firstname': 'Kylian',
+                  'lastname': 'Mbappé Lottin',
+                  'position': 'Attacker',
+                  'nationality': 'France',
+                  'team_id': 85,
+                  'team_name': 'Paris Saint Germain',
+                  'games': {
+                    'appearences': 29,
+                    'minutes_played': 2340,
+                  },
+                  'goals': {
+                    'total': 33,
+                    'assists': 7,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 132,
+                    'on': 88
+                  },
+                },
+                {
+                  'player_id': 3246,
+                  'player_name': 'N. Pépé',
+                  'firstname': 'Nicolas',
+                  'lastname': 'Pépé',
+                  'position': 'Attacker',
+                  'nationality': 'Côte d\'Ivoire',
+                  'team_id': 79,
+                  'team_name': 'Lille',
+                  'games': {
+                    'appearences': 38,
+                    'minutes_played': 3332,
+                  },
+                  'goals': {
+                    'total': 22,
+                    'assists': 11,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 132,
+                    'on': 83
+                  },
+                },
+                {
+                  'player_id': 274,
+                  'player_name': 'E. Cavani',
+                  'firstname': 'Edinson Roberto',
+                  'lastname': 'Cavani Gómez',
+                  'position': 'Attacker',
+                  'nationality': 'Uruguay',
+                  'team_id': 85,
+                  'team_name': 'Paris Saint Germain',
+                  'games': {
+                    'appearences': 21,
+                    'minutes_played': 1676,
+                  },
+                  'goals': {
+                    'total': 18,
+                    'assists': 5,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 92,
+                    'on': 58
+                  },
+                },
+                {
+                  'player_id': 1922,
+                  'player_name': 'F. Thauvin',
+                  'firstname': 'Florian',
+                  'lastname': 'Thauvin',
+                  'position': 'Midfielder',
+                  'nationality': 'France',
+                  'team_id': 81,
+                  'team_name': 'Marseille',
+                  'games': {
+                    'appearences': 33,
+                    'minutes_played': 2624,
+                  },
+                  'goals': {
+                    'total': 16,
+                    'assists': 8,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 72,
+                    'on': 38
+                  },
+                },
+                {
+                  'player_id': 666,
+                  'player_name': 'M. Dembélé',
+                  'firstname': 'Moussa',
+                  'lastname': 'Dembélé',
+                  'position': 'Attacker',
+                  'nationality': 'France',
+                  'team_id': 80,
+                  'team_name': 'Lyon',
+                  'games': {
+                    'appearences': 33,
+                    'minutes_played': 2013,
+                  },
+                  'goals': {
+                    'total': 15,
+                    'assists': 4,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 112,
+                    'on': 81
+                  },
+                },
+                {
+                  'player_id': 119,
+                  'player_name': 'R. Falcao',
+                  'firstname': 'Radamel Falcao',
+                  'lastname': 'García Zárate',
+                  'position': 'Attacker',
+                  'nationality': 'Colombia',
+                  'team_id': 91,
+                  'team_name': 'Monaco',
+                  'games': {
+                    'appearences': 33,
+                    'minutes_played': 2564,
+                  },
+                  'goals': {
+                    'total': 15,
+                    'assists': 2,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 276,
+                  'player_name': 'Neymar',
+                  'firstname': 'Neymar',
+                  'lastname': 'da Silva Santos Junior',
+                  'position': 'Attacker',
+                  'nationality': 'Brazil',
+                  'team_id': 85,
+                  'team_name': 'Paris Saint Germain',
+                  'games': {
+                    'appearences': 17,
+                    'minutes_played': 1443,
+                  },
+                  'goals': {
+                    'total': 15,
+                    'assists': 7,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 21591,
+                  'player_name': 'A. Delort',
+                  'firstname': 'Andy',
+                  'lastname': 'Delort',
+                  'position': 'Attacker',
+                  'nationality': 'Algeria',
+                  'team_id': 82,
+                  'team_name': 'Montpellier',
+                  'games': {
+                    'appearences': 36,
+                    'minutes_played': 3132,
+                  },
+                  'goals': {
+                    'total': 14,
+                    'assists': 6,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 22235,
+                  'player_name': 'J. Bamba',
+                  'firstname': 'Jonathan',
+                  'lastname': 'Bamba',
+                  'position': 'Attacker',
+                  'nationality': 'France',
+                  'team_id': 79,
+                  'team_name': 'Lille',
+                  'games': {
+                    'appearences': 38,
+                    'minutes_played': 3011,
+                  },
+                  'goals': {
+                    'total': 13,
+                    'assists': 3,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 22102,
+                  'player_name': 'W. Khazri',
+                  'firstname': 'Wahbi',
+                  'lastname': 'Khazri',
+                  'position': 'Attacker',
+                  'nationality': 'Tunisia',
+                  'team_id': 1063,
+                  'team_name': 'Saint Etienne',
+                  'games': {
+                    'appearences': 32,
+                    'minutes_played': 2825,
+                  },
+                  'goals': {
+                    'total': 13,
+                    'assists': 6,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 266,
+                  'player_name': 'Á. Di María',
+                  'firstname': 'Ángel Fabián',
+                  'lastname': 'Di María Hernández',
+                  'position': 'Midfielder',
+                  'nationality': 'Argentina',
+                  'team_id': 85,
+                  'team_name': 'Paris Saint Germain',
+                  'games': {
+                    'appearences': 30,
+                    'minutes_played': 2339,
+                  },
+                  'goals': {
+                    'total': 12,
+                    'assists': 10,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 84054,
+                  'player_name': 'E. Sala',
+                  'firstname': 'Emiliano',
+                  'lastname': 'Sala',
+                  'position': 'Attacker',
+                  'nationality': 'Argentina',
+                  'team_id': 83,
+                  'team_name': 'Nantes',
+                  'games': {
+                    'appearences': 19,
+                    'minutes_played': 1376,
+                  },
+                  'goals': {
+                    'total': 12,
+                    'assists': 2,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                },
+                {
+                  'player_id': 21592,
+                  'player_name': 'G. Laborde',
+                  'firstname': 'Gaëtan',
+                  'lastname': 'Laborde',
+                  'position': 'Attacker',
+                  'nationality': 'France',
+                  'team_id': 82,
+                  'team_name': 'Montpellier',
+                  'games': {
+                    'appearences': 36,
+                    'minutes_played': 2916,
+                  },
+                  'goals': {
+                    'total': 11,
+                    'assists': null,
+                    'conceded': null,
+                  },
+                  'shots': {
+                    'total': 122,
+                    'on': 68
+                  },
+                }
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}

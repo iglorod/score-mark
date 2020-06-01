@@ -1,0 +1,24 @@
+.shotsStats {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 250px;
+}
+
+.statsTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statsData {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressLinecap {
+  margin: 10px 10px 0 !important;
+}
+
+.totalShots{
+  font-size: 20px;
+}

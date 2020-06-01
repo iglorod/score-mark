@@ -1,0 +1,17 @@
+.playerName {
+  color: #000;
+  font-size: 22px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.playerStats {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.playerStats span {
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0 5px;
+}

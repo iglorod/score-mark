@@ -1,0 +1,16 @@
+.goalsStats {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 16px;
+}
+
+.totalGoals {
+  color: #000  !important;
+  font-size: 24px;
+}
+
+.assistsGoals {
+  color: #000 !important;
+  font-size: 20px;
+}

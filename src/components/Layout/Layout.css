@@ -105,4 +105,24 @@
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #f57922 !important;
+}
+
+.ant-tabs-nav .ant-tabs-tab:hover {
+  color: #ff9c56 !important;
+}
+
+.ant-tabs-top .ant-tabs-ink-bar-animated, .ant-tabs-bottom .ant-tabs-ink-bar-animated {
+  background-color: #f57922 !important;
+}
+
+.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path{
+  stroke: #ff9c56 !important;
+}
+
+.ant-progress-success-bg, .ant-progress-bg {
+  background-color: #ff9c56 !important;
+}
+
 /* ant-design styles overwrite */

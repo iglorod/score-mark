@@ -1,23 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { Tabs } from 'antd';
+import { DatabaseOutlined, DribbbleOutlined } from '@ant-design/icons'
 
 import Standing from '../Standing/Standing';
-import FixturesItems from '../FixturesItems/FixturesItems';
-import { todayFixtures } from '../../FakeData/FakeData';
+import TopScorers from '../TopScorers/TopScorers';
 
 const League = () => {
-  const [fixtures, setFixtures] = useState([]);
-
-  useEffect(() => {
-    todayFixtures()   //fetch fixtures by league_id
-      .then(response => response.api.results.fixtures)
-      .then(fixtures => setFixtures(fixtures))
-  }, [])
+  const { TabPane } = Tabs;
 
   return (
-    <div>
-      <Standing leagueId={'id'} />
-      <FixturesItems fixtures={fixtures} />
-    </div>
+    <Tabs defaultActiveKey='1'>
+      <TabPane
+        key='1'
+        tab={
+          <span>
+            <DatabaseOutlined /> {'League Standing'}
+          </span>
+        }
+      >
+        <Standing leagueId={'id'} />
+      </TabPane>
+      <TabPane
+        key='2'
+        tab={
+          <span>
+            <DribbbleOutlined /> {'Top Scorers'}
+          </span>
+        }
+      >
+        <TopScorers />
+      </TabPane>
+    </Tabs>
   )
 }
 
