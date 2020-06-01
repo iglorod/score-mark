@@ -1,7 +1,10 @@
-.shotsStats {
+.shotsStats, .mobileShotsStats {
   display: flex;
   flex-direction: column;
   text-align: left;
+}
+
+.shotsStats {
   min-width: 250px;
 }
 
@@ -15,10 +18,14 @@
   justify-content: space-between;
 }
 
+.hided {
+  display: none !important;
+}
+
 .progressLinecap {
   margin: 10px 10px 0 !important;
 }
 
-.totalShots{
+.totalShots {
   font-size: 20px;
 }

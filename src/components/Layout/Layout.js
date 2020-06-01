@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
+import { throttle } from 'lodash';
 
 import { Layout } from 'antd';
 import './Layout.css';
@@ -7,6 +8,7 @@ import './Layout.css';
 import Header from './Header/Header';
 import Content from './Content/Content';
 import { signInLocallyActionCreator } from '../../store/authorization/actions';
+import { setMobileModeActionCreator } from '../../store/mode/actions';
 import ModalSpinner from '../UI/ModalSpinner/ModalSpinner';
 
 const LayoutComponent = (props) => {
@@ -15,6 +17,25 @@ const LayoutComponent = (props) => {
   useEffect(() => {
     signInLocally();
   }, [signInLocally])
+  
+  useEffect(() => {
+    checkWidth.current();
+    window.addEventListener('resize', checkWidth.current);
+
+    return () => {
+      checkWidth.current.cancel();
+      window.removeEventListener('scroll', checkWidth.current);
+    }
+  }, [])
+
+  const checkWidth = useRef(throttle(() => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 576) {
+      props.setMode(true);
+    } else {
+      props.setMode(false);
+    }
+  }, 1500));
 
   let content = (
     <Layout>
@@ -42,6 +63,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     signInLocally: () => { dispatch(signInLocallyActionCreator()) },
+    setMode: (mobile) => { dispatch(setMobileModeActionCreator(mobile)) },
   }
 }
 

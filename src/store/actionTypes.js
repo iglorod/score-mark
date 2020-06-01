@@ -10,3 +10,7 @@ export const RESET_TIMEOUT_ID = 'RESET_TIMEOUT_ID';
 export const SET_TOKEN = 'SET_TOKEN';
 export const SET_USER_DATA = 'SET_USER_DATA';
 export const LOGOUT = 'LOGOUT';
+
+
+//mode
+export const SET_MODE = 'SET_MODE';

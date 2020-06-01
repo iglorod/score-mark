@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import { Row, Col, Spin, Divider } from 'antd';
 
@@ -9,7 +10,7 @@ import ShotsStats from './ShotsStats/ShotsStats';
 import GoalsStats from './GoalsStats/GoalsStats';
 import classes from './TopScorers.module.css';
 
-const Standing = ({ leagueId }) => {
+const Standing = ({ leagueId, mobileMode }) => {
   const [playerData, setPlayerData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +34,7 @@ const Standing = ({ leagueId }) => {
             <div className={classes.playerStats}>
               <TimeStats player={player} />
               <GoalsStats player={player} />
-              <ShotsStats player={player} />
+              <ShotsStats player={player} mobileMode={mobileMode} />
             </div>
             {index !== player.length - 1 ? <Divider /> : null}
           </Col>
@@ -43,4 +44,10 @@ const Standing = ({ leagueId }) => {
   )
 }
 
-export default Standing;
+const mapStateToProps = (state) => {
+  return {
+    mobileMode: state.mode.mobile,
+  }
+}
+
+export default connect(mapStateToProps)(Standing);

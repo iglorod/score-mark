@@ -5,6 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import authReducer from './store/authorization/reducer';
+import modeReducer from './store/mode/reducer';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -12,6 +13,7 @@ import './index.css';
 
 const store = createStore(combineReducers({
   auth: authReducer,
+  mode: modeReducer,
 }), applyMiddleware(thunk));
 
 ReactDOM.render(

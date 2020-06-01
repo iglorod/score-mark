@@ -4,11 +4,11 @@ import { Progress } from 'antd';
 
 import classes from './ShotsStats.module.css';
 
-const ShotsStats = ({ player }) => {
+const ShotsStats = ({ player, mobileMode }) => {
   const shortsOnTargetPercent = Math.trunc(player.shots.on * 100 / player.shots.total);
 
   return (
-    <div className={classes.shotsStats}>
+    <div className={mobileMode ? classes.mobileShotsStats : classes.shotsStats}>
       <div className={classes.statsTitle}>
         <div>Shots on target</div>
         <div>Total</div>
@@ -16,7 +16,7 @@ const ShotsStats = ({ player }) => {
       <div className={classes.statsData}>
         <Progress type='circle' percent={shortsOnTargetPercent} width={40} />
         <Progress
-          className={classes.progressLinecap}
+          className={mobileMode ? classes.hided : classes.progressLinecap}
           percent={shortsOnTargetPercent}
           size={'small'}
           showInfo={false} />
