@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { Tabs } from 'antd';
-import { DatabaseOutlined, DribbbleOutlined } from '@ant-design/icons'
+import { DatabaseOutlined, DribbbleOutlined, PicCenterOutlined } from '@ant-design/icons'
 
 import Standing from '../Standing/Standing';
 import TopScorers from '../TopScorers/TopScorers';
+import LeagueFixtures from '../LeagueFixtures/LeagueFixtures';
 
 const League = () => {
   const { TabPane } = Tabs;
@@ -30,6 +31,16 @@ const League = () => {
         }
       >
         <TopScorers />
+      </TabPane>
+      <TabPane
+        key='3'
+        tab={
+          <span>
+            <PicCenterOutlined /> {'Fixtures'}
+          </span>
+        }
+      >
+        <LeagueFixtures />
       </TabPane>
     </Tabs>
   )

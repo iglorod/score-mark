@@ -31,9 +31,9 @@ const LayoutComponent = (props) => {
   const checkWidth = useRef(throttle(() => {
     const windowWidth = window.innerWidth;
     if (windowWidth < 576) {
-      props.setMode(true);
+      props.setMode(true, windowWidth);
     } else {
-      props.setMode(false);
+      props.setMode(false, windowWidth);
     }
   }, 1500));
 
@@ -63,7 +63,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     signInLocally: () => { dispatch(signInLocallyActionCreator()) },
-    setMode: (mobile) => { dispatch(setMobileModeActionCreator(mobile)) },
+    setMode: (mobile, windowWidth) => { dispatch(setMobileModeActionCreator(mobile, windowWidth)) },
   }
 }
 

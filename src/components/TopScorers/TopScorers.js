@@ -26,21 +26,24 @@ const Standing = ({ leagueId, mobileMode }) => {
   if (loading) return <Spin />;
 
   return (
-    <Row>
-      {
-        playerData.map((player, index) => (
-          <Col key={index} xs={{ span: 22, offset: 1 }} sm={{ span: 22, offset: 1 }} md={{ span: 20, offset: 2 }} lg={{ span: 12, offset: 6 }} >
-            <div className={classes.playerName}>{player.firstname} {player.lastname}</div>
-            <div className={classes.playerStats}>
-              <TimeStats player={player} />
-              <GoalsStats player={player} />
-              <ShotsStats player={player} mobileMode={mobileMode} />
-            </div>
-            {index !== player.length - 1 ? <Divider /> : null}
-          </Col>
-        ))
-      }
-    </Row>
+    <>
+      <div className={classes.componentTitle}>{'League Top Scorers'}</div>
+      <Row>
+        {
+          playerData.map((player, index) => (
+            <Col key={index} xs={{ span: 22, offset: 1 }} sm={{ span: 22, offset: 1 }} md={{ span: 20, offset: 2 }} lg={{ span: 12, offset: 6 }} >
+              <div className={classes.playerName}>{player.firstname} {player.lastname}</div>
+              <div className={classes.playerStats}>
+                <TimeStats player={player} />
+                <GoalsStats player={player} />
+                <ShotsStats player={player} mobileMode={mobileMode} />
+              </div>
+              {index !== player.length - 1 ? <Divider /> : null}
+            </Col>
+          ))
+        }
+      </Row>
+    </>
   )
 }
 

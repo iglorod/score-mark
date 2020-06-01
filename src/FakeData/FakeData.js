@@ -1356,3 +1356,37 @@ export const topScorers = () => {
     }, 1000)
   })
 }
+
+export const leagueRounds = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              fixtures: [
+                'Regular_Season_-_1',
+                'Regular_Season_-_2',
+                'Regular_Season_-_3',
+                'Regular_Season_-_4',
+                'Regular_Season_-_5',
+                'Regular_Season_-_6',
+                'Regular_Season_-_7',
+                'Regular_Season_-_8',
+                'Regular_Season_-_9',
+                'Regular_Season_-_10',
+                'Regular_Season_-_11',
+                'Regular_Season_-_12',
+                'Regular_Season_-_13',
+                'Regular_Season_-_14',
+                'Regular_Season_-_15',
+                'Regular_Season_-_16',
+                'Regular_Season_-_17',
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
