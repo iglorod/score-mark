@@ -14,3 +14,10 @@ export const LOGOUT = 'LOGOUT';
 
 //mode
 export const SET_MODE = 'SET_MODE';
+
+
+//fixture
+export const START_FIXTURE_LOADING = 'START_FIXTURE_LOADING';
+export const FINISH_FIXTURE_LOADING = 'FINISH_FIXTURE_LOADING';
+export const SET_FIXTURE = 'SET_FIXTURE';
+

@@ -1,0 +1,32 @@
+.playerAvatar {
+  font-size: 12px !important;
+  background: #EB5B14 !important;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.mainColorAvatar {
+  background: #EB5B14 !important;
+}
+
+.secondColorAvatar {
+  background: #008BE0 !important;
+}
+
+.playerAvatar:hover {
+  opacity: .8;
+}
+
+.playerData {
+  color: #fff;
+  font-size: 10px;
+  margin: auto;
+  width: max-content;
+  max-width: 110%;
+  padding: 0 5px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.playerNumber {
+  color: rgb(144, 144, 144);
+}
