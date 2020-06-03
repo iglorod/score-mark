@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Team from './Team/Team';
-import FieldImage from '../../../assets/images/field.jpg';
+import FieldImage from '../../../../assets/images/field.jpg';
 import classes from './Formation.module.css';
 
 const Formation = ({ fixture }) => {

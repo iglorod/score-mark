@@ -1,0 +1,41 @@
+.substitutes {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-align: left;
+  margin: 10px;
+  color: #000;
+}
+
+.player {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.playerName {
+  color: #000 !important;
+  vertical-align: middle;
+}
+
+.playerName:hover {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.playerNumber {
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0 5px;
+  vertical-align: middle;
+}
+
+.playerPos {
+  font-size: 14px;
+}
+
+.awayAvatar {
+  background: #EB5B14 !important;
+}
+
+.homeAwatar {
+  background: #008BE0 !important;
+}

@@ -1,0 +1,15 @@
+.fixtureScore {
+  min-width: 100px;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  font-size: 26px;
+}
+
+.status {
+  color: #ff9c56;
+  font-size: 20px;
+}

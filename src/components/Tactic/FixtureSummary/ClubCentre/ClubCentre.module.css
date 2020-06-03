@@ -1,0 +1,17 @@
+.clubCentre, .clubCentreAway {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.clubCentreAway {
+  flex-direction: row-reverse;
+}
+
+.clubData, .clubDataAway{
+  display: flex;
+}
+
+.clubDataAway {
+  flex-direction: row-reverse;
+}

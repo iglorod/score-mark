@@ -1,0 +1,13 @@
+.clubInfo, .clubInfoAway {
+  display: flex;
+  flex-direction: column;
+}
+
+.clubInfo {
+  text-align: left;
+}
+
+.clubInfoAway {
+  text-align: right;
+}
+

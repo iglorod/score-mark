@@ -1,6 +1,5 @@
 .playerAvatar {
   font-size: 12px !important;
-  background: #EB5B14 !important;
   transition: all .2s;
   cursor: pointer;
 }
