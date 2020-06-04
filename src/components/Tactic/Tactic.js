@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { Spin, Tabs, Row, Col } from 'antd';
-import { BorderlessTableOutlined } from '@ant-design/icons';
+import { BorderlessTableOutlined, BoxPlotOutlined } from '@ant-design/icons';
 
 import Game from './Game/Game';
 import FixtureSummary from './FixtureSummary/FixtureSummary';
+import FixtureStats from './FixtureStats/FixtureStats';
 import { fetchFixturesActionCreator } from '../../store/fixture/actions';
 
 const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
@@ -55,9 +56,9 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
 
           <TabPane
             key='2'
-            tab='Tab 2'
+            tab={<><BoxPlotOutlined /> {'Match Stats'}</>}
           >
-            {'Content of Tab Pane 2'}
+            <FixtureStats />
           </TabPane>
 
           <TabPane

@@ -1,0 +1,24 @@
+.clubsColors {
+  display: flex;
+  justify-content: center;
+}
+
+.club {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.firstColor, .secondColor {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+}
+
+.firstColor {
+  background: #008BE0 !important;
+}
+
+.secondColor {
+  background: #EB5B14 !important;
+}

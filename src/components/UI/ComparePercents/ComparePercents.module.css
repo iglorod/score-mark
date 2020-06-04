@@ -1,0 +1,46 @@
+.comparePercents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.firstPercents, .lastPercents {
+  height: 26px;
+}
+
+.firstPercents {
+  text-align: left;
+  margin-right: 2px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: #008BE0 !important;
+}
+
+.lastPercents {
+  text-align: right;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #EB5B14 !important;
+}
+
+.percents {
+  display: flex;
+  width: 100%;
+}
+
+.value {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
