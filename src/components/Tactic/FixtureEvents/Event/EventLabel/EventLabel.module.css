@@ -1,0 +1,11 @@
+.label, .labels {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px 0 10px;
+}

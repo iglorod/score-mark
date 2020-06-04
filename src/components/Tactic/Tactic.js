@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { Spin, Tabs, Row, Col } from 'antd';
-import { BorderlessTableOutlined, BoxPlotOutlined } from '@ant-design/icons';
+import { BorderlessTableOutlined, BoxPlotOutlined, AudioOutlined } from '@ant-design/icons';
 
 import Game from './Game/Game';
 import FixtureSummary from './FixtureSummary/FixtureSummary';
 import FixtureStats from './FixtureStats/FixtureStats';
+import FixtureEvents from './FixtureEvents/FixtureEvents';
 import { fetchFixturesActionCreator } from '../../store/fixture/actions';
 
 const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
@@ -41,6 +42,8 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
   return (
     <Row>
       <Col md={{ span: 20, offset: 2 }} lg={{ span: 20, offset: 2 }} >
+        <FixtureSummary />
+
         <Tabs
           activeKey={activeKey}
           onTabClick={(key) => changeActiveKey(key)}
@@ -50,7 +53,6 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
             disabled={!showMatchCentre}
             tab={<><BorderlessTableOutlined /> {'Match Centre'}</>}
           >
-            <FixtureSummary />
             <Game />
           </TabPane>
 
@@ -63,9 +65,9 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
 
           <TabPane
             key='3'
-            tab='Tab 3'
+            tab={<><AudioOutlined /> {'Match Events'}</>}
           >
-            {'Content of Tab Pane 3'}
+            <FixtureEvents />
           </TabPane>
         </Tabs>
       </Col>
