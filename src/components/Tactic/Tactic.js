@@ -7,9 +7,9 @@ import { BorderlessTableOutlined } from '@ant-design/icons';
 import Game from './Game/Game';
 import FixtureSummary from './FixtureSummary/FixtureSummary';
 import { fetchFixturesActionCreator } from '../../store/fixture/actions';
-import classes from './Tactic.module.css';
 
 const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
+  const [activeKey, setActiveKey] = useState('1');
   const [showMatchCentre, setShowMatchCentre] = useState(true);
   const { TabPane } = Tabs;
 
@@ -18,7 +18,13 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
   }, [])
 
   useEffect(() => {
-    if (windowWidth < 600) {
+    if (!showMatchCentre && activeKey === '1') {
+      setActiveKey('2');
+    }
+  }, [showMatchCentre])
+
+  useEffect(() => {
+    if (windowWidth < 1154) {
       setShowMatchCentre(false);
     } else {
       setShowMatchCentre(true);
@@ -27,10 +33,17 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
 
   if (loading) return <Spin />
 
+  const changeActiveKey = (key) => {
+    setActiveKey(key);
+  }
+
   return (
     <Row>
       <Col md={{ span: 20, offset: 2 }} lg={{ span: 20, offset: 2 }} >
-        <Tabs defaultActiveKey='1'>
+        <Tabs
+          activeKey={activeKey}
+          onTabClick={(key) => changeActiveKey(key)}
+        >
           <TabPane
             key='1'
             disabled={!showMatchCentre}
@@ -40,11 +53,17 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
             <Game />
           </TabPane>
 
-          <TabPane tab='Tab 2' key='2'>
+          <TabPane
+            key='2'
+            tab='Tab 2'
+          >
             {'Content of Tab Pane 2'}
           </TabPane>
-          
-          <TabPane tab='Tab 3' key='3'>
+
+          <TabPane
+            key='3'
+            tab='Tab 3'
+          >
             {'Content of Tab Pane 3'}
           </TabPane>
         </Tabs>

@@ -22,6 +22,14 @@ export const setFixtureActionCreator = (fixture) => {
   }
 }
 
+export const selectPlayerActionCreator = (playerId, isAway) => {
+  return {
+    type: actionTypes.SELECT_PLAYER,
+    playerId,
+    isAway,
+  }
+}
+
 export const fetchFixturesActionCreator = () => {
   return dispatch => {
     //axios.get(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-06`)

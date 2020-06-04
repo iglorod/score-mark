@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import PlayerItem from './PlayerItem/PlayerItem';
+import { selectPlayerActionCreator } from '../../../../../../store/fixture/actions';
 import classes from './PlayersColumn.module.css';
 
 const PlayersColumn = (props) => {
   const { count, order, showedPlayers, team, playersStats } = props;
   const playersToShow = [];
+
+  useEffect(() => {
+    showedPlayers.clear();
+  })
 
   for (let i = 0; i < order.length; i++) {
     const position = order[i];
@@ -26,11 +32,29 @@ const PlayersColumn = (props) => {
     <div className={classes.players} style={{ width: `${props.width}%` }}>
       {
         playersToShow.map((player, key) => (
-          <PlayerItem key={key} away={props.away} player={player} />
+          <PlayerItem
+            key={key}
+            away={props.away}
+            player={player}
+            selectedPlayerId={props.away ? props.awayPlayerId : props.homePlayerId}
+            selectPlayer={props.selectPlayer.bind(this, player.player_id, props.away)} />
         ))
       }
     </div>
   )
 }
 
-export default PlayersColumn;
+const mapStateToProps = (state) => {
+  return {
+    homePlayerId: state.fxt.homePlayerId,
+    awayPlayerId: state.fxt.awayPlayerId,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectPlayer: (playerId, isAway) => { dispatch(selectPlayerActionCreator(playerId, isAway)) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayersColumn);

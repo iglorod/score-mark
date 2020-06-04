@@ -4,7 +4,9 @@ import { Avatar } from 'antd';
 
 import classes from './PlayerItem.module.css';
 
-const PlayerItem = ({ player, away }) => {
+const PlayerItem = (props) => {
+  const { player, away, selectedPlayerId } = props;
+
   const avatarClasses = [classes.playerAvatar];
   if (away) {
     avatarClasses.push(classes.mainColorAvatar);
@@ -12,11 +14,18 @@ const PlayerItem = ({ player, away }) => {
     avatarClasses.push(classes.secondColorAvatar);
   }
 
+  if (selectedPlayerId !== null && selectedPlayerId !== player.player_id) {
+    avatarClasses.push(classes.transparentPlayer);
+  }
+
   return (
     <div>
-        <Avatar className={avatarClasses.join(' ')}>
-          {player.playerStats.rating}
-        </Avatar>
+      <Avatar
+        className={avatarClasses.join(' ')}
+        onClick={props.selectPlayer}
+      >
+        {player.playerStats.rating}
+      </Avatar>
       <div className={classes.playerData}>
         <span className={classes.playerNumber}>{player.number}. </span>
         {player.player}
@@ -25,4 +34,4 @@ const PlayerItem = ({ player, away }) => {
   )
 }
 
-export default PlayerItem;
+export default React.memo(PlayerItem);

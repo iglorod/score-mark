@@ -6,7 +6,7 @@ import classes from './Team.module.css';
 const Team = ({ formation, team, playersStats, away }) => {
   const order = ['G', 'D', 'M', 'F'];
   const showedPlayers = new Set();
-
+  
   const formationWithGk = ('1-' + formation).split('-');
   if (away) {
     formationWithGk.reverse();

@@ -3,6 +3,8 @@ import * as actionTypes from '../actionTypes';
 const initialState = {
   fixture: null,
   loading: true,
+  homePlayerId: null,
+  awayPlayerId: null,
 }
 
 const reducer = (state = initialState, action) => {
@@ -25,6 +27,23 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         fixture: action.fixture,
+      }
+    }
+
+    case actionTypes.SELECT_PLAYER: {
+      let selectedPlayer = {
+        homePlayerId: state.homePlayerId === action.playerId ? null : action.playerId,
+      }
+
+      if (action.isAway) {
+        selectedPlayer = {
+          awayPlayerId: state.awayPlayerId === action.playerId ? null : action.playerId,
+        }
+      }
+
+      return {
+        ...state,
+        ...selectedPlayer,
       }
     }
 

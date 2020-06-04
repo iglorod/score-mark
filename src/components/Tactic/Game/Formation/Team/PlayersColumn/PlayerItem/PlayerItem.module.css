@@ -29,3 +29,7 @@
 .playerNumber {
   color: rgb(144, 144, 144);
 }
+
+.transparentPlayer {
+  opacity: 0.3;
+}
