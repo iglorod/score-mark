@@ -11,7 +11,7 @@ const AwayTeam = ({ fixture }) => {
           <Link
             className={classes.fixtureDate}
             to={{
-              pathname: '/team',
+              pathname: '/club',
               state: {
                 id: fixture.awayTeam.team_id,
               }

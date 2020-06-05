@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import authReducer from './store/authorization/reducer';
 import modeReducer from './store/mode/reducer';
 import fixtureReducer from './store/fixture/reducer';
+import clubReducer from './store/club/reducer';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -16,6 +17,7 @@ const store = createStore(combineReducers({
   auth: authReducer,
   mode: modeReducer,
   fxt: fixtureReducer,
+  club: clubReducer,
 }), applyMiddleware(thunk));
 
 ReactDOM.render(

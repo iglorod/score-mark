@@ -1,0 +1,54 @@
+.clubInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  margin-top: 70px;
+  min-width: 235px;
+  background: #f57922;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+  padding: 10px;
+  border-radius: 50%;
+  background: #fff;
+  margin-top: -70px;
+  width: min-content;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: all .5s;
+}
+
+.logo {
+  height: 100px;
+}
+
+.teamName {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.stadiumIcon {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.stadium {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.address {
+  font-size: 12px;
+}
+
+.address>span {
+  font-size: 20px;
+  margin-right: 5px;
+}

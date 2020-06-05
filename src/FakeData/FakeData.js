@@ -3167,46 +3167,46 @@ export const fetchFixture = () => {
                         'total': 0,
                         'on': 0,
                       },
-                    'goals': {
+                      'goals': {
 
                         'total': 0,
                         'conceded': 0,
                         'assists': 0,
                       },
-                    'passes': {
+                      'passes': {
 
                         'total': 17,
-                    'key': 1,
-                    'accuracy': 65,
+                        'key': 1,
+                        'accuracy': 65,
                       },
-                    'tackles': {
+                      'tackles': {
 
                         'total': 2,
-                    'blocks': 0,
+                        'blocks': 0,
                         'interceptions': 0,
                       },
-                    'duels': {
+                      'duels': {
 
                         'total': 0,
                         'won': 0,
                       },
-                    'dribbles': {
+                      'dribbles': {
 
                         'attempts': 1,
-                    'success': 1,
-                    'past': 0,
+                        'success': 1,
+                        'past': 0,
                       },
-                    'fouls': {
+                      'fouls': {
 
                         'drawn': 1,
-                    'committed': 1,
+                        'committed': 1,
                       },
-                    'cards': {
+                      'cards': {
 
                         'yellow': 0,
                         'red': 0,
                       },
-                    'penalty': {
+                      'penalty': {
 
                         'won': 0,
                         'commited': 0,
@@ -3215,7 +3215,7 @@ export const fetchFixture = () => {
                         'saved': 0,
                       },
                     },
-                   {
+                    {
 
                       'event_id': 157508,
                       'updateAt': 1579187376,
@@ -3241,40 +3241,40 @@ export const fetchFixture = () => {
                         'conceded': 0,
                         'assists': 0,
                       },
-                    'passes': {
+                      'passes': {
 
                         'total': 34,
-                    'key': 0,
+                        'key': 0,
                         'accuracy': 81,
                       },
-                    'tackles': {
+                      'tackles': {
 
                         'total': 0,
                         'blocks': 0,
                         'interceptions': 1
                       },
-                    'duels': {
+                      'duels': {
 
                         'total': 0,
                         'won': 0,
                       },
-                    'dribbles': {
+                      'dribbles': {
 
                         'attempts': 0,
                         'success': 0,
                         'past': 0,
                       },
-                    'fouls': {
+                      'fouls': {
 
                         'drawn': 1,
-                    'committed': 1,
+                        'committed': 1,
                       },
-                    'cards': {
+                      'cards': {
 
                         'yellow': 0,
                         'red': 0,
                       },
-                    'penalty': {
+                      'penalty': {
 
                         'won': 0,
                         'commited': 0,
@@ -3283,7 +3283,7 @@ export const fetchFixture = () => {
                         'saved': 0,
                       },
                     },
-                     {
+                    {
                       'event_id': 157508,
                       'updateAt': 1579187376,
                       'player_id': 1272,
@@ -3308,40 +3308,40 @@ export const fetchFixture = () => {
                         'conceded': 0,
                         'assists': 0,
                       },
-                    'passes': {
+                      'passes': {
 
                         'total': 28,
-                    'key': 1,
-                    'accuracy': 70,
+                        'key': 1,
+                        'accuracy': 70,
                       },
-                    'tackles': {
+                      'tackles': {
 
                         'total': 2,
-                    'blocks': 0,
+                        'blocks': 0,
                         'interceptions': 2,
                       },
-                    'duels': {
+                      'duels': {
 
                         'total': 0,
                         'won': 0,
                       },
-                    'dribbles': {
+                      'dribbles': {
 
                         'attempts': 3,
-                    'success': 3,
-                    'past': 1
+                        'success': 3,
+                        'past': 1
                       },
-                    'fouls': {
+                      'fouls': {
 
                         'drawn': 1,
-                    'committed': 2,
+                        'committed': 2,
                       },
-                    'cards': {
+                      'cards': {
 
                         'yellow': 0,
                         'red': 0,
                       },
-                    'penalty': {
+                      'penalty': {
 
                         'won': 0,
                         'commited': 0,
@@ -3350,7 +3350,7 @@ export const fetchFixture = () => {
                         'saved': 0,
                       },
                     },
-                   {
+                    {
                       'event_id': 157508,
                       'updateAt': 1579187376,
                       'player_id': 21437,
@@ -3676,7 +3676,7 @@ export const fetchFixture = () => {
                         'yellow': 0,
                         'red': 0,
                       },
-                    'penalty': {
+                      'penalty': {
                         'won': 0,
                         'commited': 0,
                         'success': 0,
@@ -3769,44 +3769,44 @@ export const fetchFixture = () => {
                         'total': 0,
                         'on': 0,
                       },
-                    'goals': {
+                      'goals': {
                         'total': 0,
                         'conceded': 0,
                         'assists': 0,
                       },
-                    'passes': {
+                      'passes': {
                         'total': 3,
-                    'key': 0,
+                        'key': 0,
                         'accuracy': 100
                       },
-                    'tackles': {
+                      'tackles': {
 
                         'total': 1,
-                    'blocks': 0,
+                        'blocks': 0,
                         'interceptions': 0,
                       },
-                    'duels': {
+                      'duels': {
 
                         'total': 0,
                         'won': 0,
                       },
-                    'dribbles': {
+                      'dribbles': {
 
                         'attempts': 1,
-                    'success': 1,
-                    'past': 0,
+                        'success': 1,
+                        'past': 0,
                       },
-                    'fouls': {
+                      'fouls': {
 
                         'drawn': 0,
                         'committed': 1,
                       },
-                    'cards': {
+                      'cards': {
 
                         'yellow': 0,
                         'red': 0,
                       },
-                    'penalty': {
+                      'penalty': {
 
                         'won': 0,
                         'commited': 0,
@@ -3816,6 +3816,524 @@ export const fetchFixture = () => {
                       }
                     }
                   ]
+                }
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
+
+export const fetchTeam = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              teams: [
+                {
+                  'team_id': 33,
+                  'name': 'Manchester United',
+                  'code': 'MUN',
+                  'logo': 'https://media.api-sports.io/football/teams/33.png',
+                  'country': 'England',
+                  'is_national': false,
+                  'founded': 1878,
+                  'venue_name': 'Old Trafford',
+                  'venue_surface': 'grass',
+                  'venue_address': 'Sir Matt Busby Way',
+                  'venue_city': 'Manchester',
+                  'venue_capacity': 76212,
+                }
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
+
+export const fetchTeamStats = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              statistics: {
+                'matchs': {
+                  'matchsPlayed': {
+                    'home': 19,
+                    'away': 19,
+                    'total': 38,
+                  },
+                  'wins': {
+                    'home': 10,
+                    'away': 9,
+                    'total': 19,
+                  },
+                  'draws': {
+                    'home': 6,
+                    'away': 3,
+                    'total': 9,
+                  },
+                  'loses': {
+                    'home': 3,
+                    'away': 7,
+                    'total': 10,
+                  },
+                },
+                'goals': {
+                  'goalsFor': {
+                    'home': 33,
+                    'away': 32,
+                    'total': 65,
+                  },
+                  'goalsAgainst': {
+                    'home': 25,
+                    'away': 29,
+                    'total': 54,
+                  },
+                },
+                'goalsAvg': {
+                  'goalsFor': {
+                    'home': '1.7',
+                    'away': '1.7',
+                    'total': '1.7',
+                  },
+                  'goalsAgainst': {
+                    'home': '1.3',
+                    'away': '1.5',
+                    'total': '1.4',
+                  },
+                },
+              }
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
+
+export const fetchTeamSquard = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              players: [
+                {
+                  'player_id': 1090,
+                  'player_name': 'A. Bernede',
+                  'firstname': 'Antoine',
+                  'lastname': 'Bernede',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 20,
+                  'birth_date': '26/05/1999',
+                  'birth_place': 'Paris',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '177 cm',
+                  'weight': '74 kg',
+                },
+                {
+                  'player_id': 90593,
+                  'player_name': 'Météhan Guclu',
+                  'firstname': 'Météhan',
+                  'lastname': 'Guclu',
+                  'number': null,
+                  'position': 'Attacker',
+                  'age': 20,
+                  'birth_date': '02/04/1999',
+                  'birth_place': 'Montfermeil',
+                  'birth_country': 'France',
+                  'nationality': 'Turkey',
+                  'height': '182 cm',
+                  'weight': null,
+                },
+                {
+                  'player_id': 14474,
+                  'player_name': 'Kevin Ramon Rimane',
+                  'firstname': 'Kevin Ramon',
+                  'lastname': 'Rimane',
+                  'number': null,
+                  'position': 'Defender',
+                  'age': 28,
+                  'birth_date': '23/02/1991',
+                  'birth_place': 'Cayenne',
+                  'birth_country': 'French Guiana',
+                  'nationality': 'French Guiana',
+                  'height': '181 cm',
+                  'weight': '74 kg',
+                },
+                {
+                  'player_id': 90591,
+                  'player_name': 'Azzeddine Toufiqui',
+                  'firstname': 'Azzeddine',
+                  'lastname': 'Toufiqui',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 20,
+                  'birth_date': '25/04/1999',
+                  'birth_place': null,
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': null,
+                  'weight': null,
+                },
+                {
+                  'player_id': 268,
+                  'player_name': 'I. Hemans Arday',
+                  'firstname': 'Isaac',
+                  'lastname': 'Hemans Arday',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 23,
+                  'birth_date': '26/12/1996',
+                  'birth_place': null,
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': null,
+                  'weight': null,
+                },
+                {
+                  'player_id': 90594,
+                  'player_name': 'Eric Junior Dina Ebimbe',
+                  'firstname': 'Eric Junior',
+                  'lastname': 'Dina Ebimbe',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 19,
+                  'birth_date': '21/11/2000',
+                  'birth_place': null,
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': null,
+                  'weight': null,
+                },
+                {
+                  'player_id': 265,
+                  'player_name': 'A. Zagre',
+                  'firstname': 'Arthur',
+                  'lastname': 'Zagre',
+                  'number': null,
+                  'position': 'Defender',
+                  'age': 18,
+                  'birth_date': '04/10/2001',
+                  'birth_place': null,
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': null,
+                  'weight': null,
+                },
+                {
+                  'player_id': 272,
+                  'player_name': 'Adrien Rabiot',
+                  'firstname': 'Adrien',
+                  'lastname': 'Rabiot',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 24,
+                  'birth_date': '03/04/1995',
+                  'birth_place': 'Saint-Maurice',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '188 cm',
+                  'weight': '71 kg',
+                },
+                {
+                  'player_id': 255,
+                  'player_name': 'S. Cibois',
+                  'firstname': 'Sébastien',
+                  'lastname': 'Cibois',
+                  'number': null,
+                  'position': 'Goalkeeper',
+                  'age': 21,
+                  'birth_date': '02/03/1998',
+                  'birth_place': 'Argenteuil',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '178 cm',
+                  'weight': null,
+                },
+                {
+                  'player_id': 269,
+                  'player_name': 'Christopher Nkunku',
+                  'firstname': 'Christopher',
+                  'lastname': 'Nkunku',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 22,
+                  'birth_date': '14/11/1997',
+                  'birth_place': 'Lagny-sur-Marne',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '178 cm',
+                  'weight': '68 kg',
+                },
+                {
+                  'player_id': 8563,
+                  'player_name': 'Lassana Diarra',
+                  'firstname': 'Lassana',
+                  'lastname': 'Diarra',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 34,
+                  'birth_date': '10/03/1985',
+                  'birth_place': 'Paris',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '173 cm',
+                  'weight': '73 kg',
+                },
+                {
+                  'player_id': 270,
+                  'player_name': 'Stanley Nsoki',
+                  'firstname': 'Stanley',
+                  'lastname': 'Nsoki',
+                  'number': null,
+                  'position': 'Midfielder',
+                  'age': 20,
+                  'birth_date': '09/04/1999',
+                  'birth_place': 'Poissy',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '178 cm',
+                  'weight': null,
+                },
+                {
+                  'player_id': 277,
+                  'player_name': 'Moussa Diaby',
+                  'firstname': 'Moussa',
+                  'lastname': 'Diaby',
+                  'number': null,
+                  'position': 'Attacker',
+                  'age': 20,
+                  'birth_date': '07/07/1999',
+                  'birth_place': 'Paris',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '170 cm',
+                  'weight': '65 kg',
+                },
+                {
+                  'player_id': 260,
+                  'player_name': 'C. Dagba',
+                  'firstname': 'Colin',
+                  'lastname': 'Dagba',
+                  'number': null,
+                  'position': 'Defender',
+                  'age': 21,
+                  'birth_date': '09/09/1998',
+                  'birth_place': 'Béthune',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '170 cm',
+                  'weight': '62 kg',
+                },
+                {
+                  'player_id': 263,
+                  'player_name': 'Layvin Kurzawa',
+                  'firstname': 'Layvin',
+                  'lastname': 'Kurzawa',
+                  'number': null,
+                  'position': 'Defender',
+                  'age': 27,
+                  'birth_date': '04/09/1992',
+                  'birth_place': 'Fréjus',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '182 cm',
+                  'weight': '74 kg',
+                },
+                {
+                  'player_id': 258,
+                  'player_name': 'Juan Bernat Velasco',
+                  'firstname': 'Juan',
+                  'lastname': 'Bernat Velasco',
+                  'number': null,
+                  'position': 'Defender',
+                  'age': 26,
+                  'birth_date': '01/03/1993',
+                  'birth_place': 'Valencia',
+                  'birth_country': 'Spain',
+                  'nationality': 'Spain',
+                  'height': '170 cm',
+                  'weight': '67 kg',
+                }
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
+
+export const fetchPlayerDetailsQuery = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              players: [
+                {
+                  'player_id': 253,
+                  'player_name': 'A. Areola',
+                  'firstname': 'Alphonse',
+                  'lastname': 'Areola',
+                  'number': null,
+                  'position': 'Goalkeeper',
+                  'age': 27,
+                  'birth_date': '27/02/1993',
+                  'birth_place': 'Paris',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '195 cm',
+                  'weight': '94 kg',
+                  'injured': null,
+                  'rating': '6.433333',
+                  'team_id': 541,
+                  'team_name': 'Real Madrid',
+                  'league': 'La Liga',
+                  'season': '2019-2020',
+                  'captain': 0,
+                  'shots': {
+                    'total': 0,
+                    'on': 0,
+                  },
+                  'goals': {
+                    'total': 0,
+                    'conceded': 3,
+                    'assists': 0,
+                  },
+                  'passes': {
+                    'total': 61,
+                    'key': 0,
+                    'accuracy': 77,
+                  },
+                  'tackles': {
+                    'total': 0,
+                    'blocks': 0,
+                    'interceptions': 0,
+                  },
+                  'duels': {
+                    'total': 0,
+                    'won': 0,
+                  },
+                  'dribbles': {
+                    'attempts': 0,
+                    'success': 0,
+                  },
+                  'fouls': {
+                    'drawn': 0,
+                    'committed': 1,
+                  },
+                  'cards': {
+                    'yellow': 1,
+                    'yellowred': 0,
+                    'red': 0,
+                  },
+                  'penalty': {
+                    'won': 0,
+                    'commited': 0,
+                    'success': 0,
+                    'missed': 0,
+                    'saved': 0,
+                  },
+                  'games': {
+                    'appearences': 3,
+                    'minutes_played': 270,
+                    'lineups': 3,
+                  },
+                  'substitutes': {
+                    'in': 0,
+                    'out': 0,
+                    'bench': 21,
+                  },
+                },
+                {
+                  'player_id': 253,
+                  'player_name': 'A. Areola',
+                  'firstname': 'Alphonse',
+                  'lastname': 'Areola',
+                  'number': null,
+                  'position': 'Goalkeeper',
+                  'age': 27,
+                  'birth_date': '27/02/1993',
+                  'birth_place': 'Paris',
+                  'birth_country': 'France',
+                  'nationality': 'France',
+                  'height': '195 cm',
+                  'weight': '94 kg',
+                  'injured': null,
+                  'rating': '6.766666',
+                  'team_id': 85,
+                  'team_name': 'Paris Saint Germain',
+                  'league': 'Ligue 1',
+                  'season': '2019-2020',
+                  'captain': 0,
+                  'shots': {
+                    'total': 0,
+                    'on': 0,
+                  },
+                  'goals': {
+                    'total': 0,
+                    'conceded': 2,
+                    'assists': 0,
+                  },
+                  'passes': {
+                    'total': 48,
+                    'key': 0,
+                    'accuracy': 100,
+                  },
+                  'tackles': {
+                    'total': 0,
+                    'blocks': 0,
+                    'interceptions': 0,
+                  },
+                  'duels': {
+                    'total': 0,
+                    'won': 0,
+                  },
+                  'dribbles': {
+                    'attempts': 0,
+                    'success': 0,
+                  },
+                  'fouls': {
+                    'drawn': 1,
+                    'committed': 0,
+                  },
+                  'cards': {
+                    'yellow': 0,
+                    'yellowred': 0,
+                    'red': 0,
+                  },
+                  'penalty': {
+                    'won': 0,
+                    'commited': 0,
+                    'success': 0,
+                    'missed': 0,
+                    'saved': 0,
+                  },
+                  'games': {
+                    'appearences': 3,
+                    'minutes_played': 270,
+                    'lineups': 3,
+                  },
+                  'substitutes': {
+                    'in': 0,
+                    'out': 0,
+                    'bench': 1,
+                  }
                 }
               ]
             }

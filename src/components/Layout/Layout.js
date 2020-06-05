@@ -24,7 +24,7 @@ const LayoutComponent = (props) => {
 
     return () => {
       checkWidth.current.cancel();
-      window.removeEventListener('scroll', checkWidth.current);
+      window.removeEventListener('resize', checkWidth.current);
     }
   }, [])
 

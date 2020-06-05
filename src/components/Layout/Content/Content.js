@@ -8,6 +8,7 @@ import SignIn from '../../Authorization/SignIn/SignIn';
 import Fixtures from '../../Fixtures/Fixtures';
 import Fixture from '../../Fixture/Fixture';
 import League from '../../League/League';
+import Club from '../../Club/Club';
 
 const ContentComponent = () => {
   const { Content } = Layout;
@@ -20,6 +21,7 @@ const ContentComponent = () => {
         <Route path='/fixture' component={Fixture} exact />
         <Route path='/fixtures' component={Fixtures} exact />
         <Route path='/league' component={League} exact />
+        <Route path='/club' component={Club} exact />
         {/* <Route path='/leage' component={Band} exact />
         <Route path='/fixtures' component={Playlist} exact />
         <Route path='/fixture' component={Playlists} exact />

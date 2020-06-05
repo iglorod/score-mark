@@ -1,0 +1,14 @@
+.greenAvatar, .redAvatar {
+  font-weight: 500;
+  background: #fff;
+  cursor: default;
+}
+
+.greenAvatar {
+  color: #52c41a !important;
+}
+
+.redAvatar {
+  color: #ff4d4f !important;
+}
+
