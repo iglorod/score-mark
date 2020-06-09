@@ -1,5 +1,6 @@
 import React from 'react';
 
+import StatsTooltip from './StatsTooltip/StatsTooltip';
 import classes from './Player.module.css';
 
 const Player = ({ player, index }) => {
@@ -12,16 +13,19 @@ const Player = ({ player, index }) => {
       </div>
       <div>{player.height}</div>
       <div>{player.weight}</div>
-      <div>{player.games.lineups}</div>
-      <div>{player.games.minutes_played}</div>
-      <div>{player.goals.total || '-'}</div>
-      <div>{player.goals.assists || '-'}</div>
-      <div>{player.cards.yellow}</div>
-      <div>{player.cards.red}</div>
-      <div>{player.passes.accuracy}</div>
-      <div>{player.tackles.interceptions}</div>
-      <div>{player.dribbles.success}</div>
-      <div className={classes.rating}>{player.rating}</div>
+      <StatsTooltip text={'Lineups'} data={player.games.lineups} />
+      <StatsTooltip text={'Minutes played'} data={player.games.minutes_played} />
+      <StatsTooltip text={'Goals'} data={player.goals.total || '-'} />
+      <StatsTooltip text={'Assists'} data={player.goals.assists || '-'} />
+      <StatsTooltip text={'Yellow cards'} data={player.cards.yellow} />
+      <StatsTooltip text={'Red cards'} data={player.cards.red} />
+      <StatsTooltip text={'Passes accuracy'} data={player.passes.accuracy} />
+      <StatsTooltip text={'Interceptions'} data={player.tackles.interceptions} />
+      <StatsTooltip text={'Dribbles success'} data={player.dribbles.success} />
+      <StatsTooltip
+        text={'Rating'}
+        className={classes.rating}
+        data={(+player.rating).toFixed(1)} />
     </div>
   )
 }

@@ -3,8 +3,8 @@ import React from 'react';
 import classes from './ComparePercents.module.css';
 
 const ComparePercents = ({ title, first, last }) => {
-  let leftWidth = first || '0';
-  let rightWidth = last || '0';
+  let leftWidth = first.toString() || '0';
+  let rightWidth = last.toString() || '0';
 
   if (leftWidth === '0' && rightWidth === '0') {
     console.log(title)

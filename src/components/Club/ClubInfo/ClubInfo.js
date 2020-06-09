@@ -48,6 +48,8 @@ const ClubInfo = (props) => {
 
   if (!club) return <ModalSpinner />;
 
+  console.log('update')
+
   return (
         <div className={classes.clubInfo} ref={logoEl}>
       <div

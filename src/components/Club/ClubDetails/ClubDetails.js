@@ -4,6 +4,7 @@ import { Tabs } from 'antd';
 import { ProfileOutlined, PercentageOutlined } from '@ant-design/icons';
 
 import Squad from './Squad/Squad';
+import Stats from './Stats/Stats';
 import classes from './ClubDetails.module.css';
 
 const ClubDetails = () => {
@@ -22,7 +23,7 @@ const ClubDetails = () => {
         key='2'
         tab={<><PercentageOutlined /> {'Club Stats'}</>}
       >
-        <div>Club Stats</div>
+        <Stats />
       </TabPane>
     </Tabs>
   )
