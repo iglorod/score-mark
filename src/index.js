@@ -8,6 +8,7 @@ import authReducer from './store/authorization/reducer';
 import modeReducer from './store/mode/reducer';
 import fixtureReducer from './store/fixture/reducer';
 import clubReducer from './store/club/reducer';
+import playerReducer from './store/player/reducer';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -18,6 +19,7 @@ const store = createStore(combineReducers({
   mode: modeReducer,
   fxt: fixtureReducer,
   club: clubReducer,
+  plr: playerReducer,
 }), applyMiddleware(thunk));
 
 ReactDOM.render(

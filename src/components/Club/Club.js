@@ -28,7 +28,6 @@ const Club = (props) => {
         </div>
       </Col>
     </Row>
-
   )
 }
 

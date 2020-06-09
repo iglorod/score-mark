@@ -4,8 +4,14 @@ import { connect } from 'react-redux';
 import ComparePercents from '../../../UI/ComparePercents/ComparePercents';
 
 const Stats = ({ stats }) => {
+  if (stats === null) return null;
+
   return (
     <>
+      <ComparePercents
+        title={'Match played Home/Away'}
+        first={stats.matchs.matchsPlayed.home}
+        last={stats.matchs.matchsPlayed.away} />
       <ComparePercents
         title={'Match wins Home/Away'}
         first={stats.matchs.wins.home}

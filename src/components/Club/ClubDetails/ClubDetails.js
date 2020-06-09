@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Tabs } from 'antd';
-import { ProfileOutlined, PercentageOutlined } from '@ant-design/icons';
+import { ProfileOutlined, BoxPlotOutlined } from '@ant-design/icons';
 
 import Squad from './Squad/Squad';
 import Stats from './Stats/Stats';
@@ -21,7 +21,7 @@ const ClubDetails = () => {
 
       <TabPane
         key='2'
-        tab={<><PercentageOutlined /> {'Club Stats'}</>}
+        tab={<><BoxPlotOutlined /> {'Club Stats'}</>}
       >
         <Stats />
       </TabPane>

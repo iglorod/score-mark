@@ -1,0 +1,17 @@
+table {
+  text-align: center;
+}
+
+table th, table td {
+  padding: 8px !important;
+}
+
+.ant-col {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  table {
+    font-size: 12px !important;
+  }
+}

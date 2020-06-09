@@ -3,16 +3,16 @@ import React from 'react';
 import classes from './ComparePercents.module.css';
 
 const ComparePercents = ({ title, first, last }) => {
-  let leftWidth = first.toString() || '0';
-  let rightWidth = last.toString() || '0';
+  let leftWidth = first || '0';
+  let rightWidth = last || '0';
 
-  if (leftWidth === '0' && rightWidth === '0') {
+  if (leftWidth.toString() === '0' && rightWidth.toString() === '0') {
     console.log(title)
     console.log(+leftWidth, +rightWidth)
     return null;
   }
 
-  if (!leftWidth.includes('%')) {
+  if (!leftWidth.toString().includes('%')) {
     const totalVal = (+first) + (+last);
 
     leftWidth = (first * 100 / totalVal) + '%';
