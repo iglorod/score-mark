@@ -28,7 +28,7 @@ const Sidelined = (props) => {
             <div className={classes.icon}><CloseOutlined /></div>
             <div>{sideline.start}</div>
             <div>{sideline.end}</div>
-            <div>{sideline.type}</div>
+            <div className={classes.illness}>{sideline.type}</div>
           </div>
         ))
       }
@@ -36,10 +36,10 @@ const Sidelined = (props) => {
   )
 }
 
-const mapStateToProps = (props) => {
+const mapStateToProps = (state) => {
   return {
-    stats: props.plr.stats,
-    sidelined: props.plr.sidelined,
+    stats: state.plr.stats,
+    sidelined: state.plr.sidelined,
   }
 }
 

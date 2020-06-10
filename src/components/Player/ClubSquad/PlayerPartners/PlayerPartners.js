@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { UserOutlined } from '@ant-design/icons';
+
 import classes from './PlayerPartners.module.css';
 
 const PlayerPartners = ({ currentId, playerPartners }) => {
@@ -20,7 +22,7 @@ const PlayerPartners = ({ currentId, playerPartners }) => {
                 }}
                 className={classes.playerName}
               >
-                {player.player_name}
+                <UserOutlined /> {player.player_name}
               </Link>
             </div>
 

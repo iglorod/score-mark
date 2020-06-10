@@ -2,9 +2,3 @@
   display: flex;
   margin-bottom: 30px;
 }
-
-@media(max-width: 1090px) {
-  .player {
-    flex-direction: column-reverse;
-  }
-}
