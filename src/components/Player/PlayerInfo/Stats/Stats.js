@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { Table } from 'antd';
+import { Table, Spin } from 'antd';
 
 import Title from './Title/Title';
 import {
@@ -47,7 +47,7 @@ const Stats = (props) => {
     setPlayerStats(dataSource);
   }
 
-  if (stats.length === 0) return null;
+  if (stats.length === 0) return <Spin />;
 
   const columns = [
     {

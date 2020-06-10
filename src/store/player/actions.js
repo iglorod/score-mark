@@ -3,7 +3,9 @@ import {
   fetchPlayerStats,
   fetchPlayerTransfers,
   fetchPlayerSidelines,
-  fetchAvailibleSeasons
+  fetchAvailibleSeasons,
+  fetchTeam,
+  fetchTeamSquard,
 } from '../../FakeData/FakeData';
 
 export const startLoadingActionCreator = () => {
@@ -52,6 +54,20 @@ export const setAvailibleSeasonsActionCreator = (seasons) => {
   }
 }
 
+export const setPlayerClubActionCreator = (club) => {
+  return {
+    type: actionTypes.SET_PLAYER_CLUB,
+    club,
+  }
+}
+
+export const setPlayerPartnersActionCreator = (players) => {
+  return {
+    type: actionTypes.SET_PLAYER_PARTNERS,
+    players,
+  }
+}
+
 export const fetchPlayerStatsBySeasonActionCreator = () => {
   return dispatch => {
     //axios.get(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-06`)
@@ -94,6 +110,28 @@ export const fetchAvailibleSeasonsActionCreator = () => {
     fetchAvailibleSeasons()
       .then(response => response.api.results.players)
       .then(players => dispatch(setAvailibleSeasonsActionCreator(players)))
+      .catch(error => console.log(error))
+  }
+}
+
+export const fetchPlayerClubActionCreator = () => {
+  return dispatch => {
+    //axios.get(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-06`)
+    // .then(response => response.data.api.results.fixtures)
+    fetchTeam()
+      .then(response => response.api.results.teams)
+      .then(teams => dispatch(setPlayerClubActionCreator(teams[0])))
+      .catch(error => console.log(error))
+  }
+}
+
+export const fetchPlayerPartnersActionCreator = () => {
+  return dispatch => {
+    //axios.get(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-06`)
+    // .then(response => response.data.api.results.fixtures)
+    fetchTeamSquard()
+      .then(response => response.api.results.players)
+      .then(players => dispatch(setPlayerPartnersActionCreator(players)))
       .catch(error => console.log(error))
   }
 }

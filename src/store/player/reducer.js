@@ -5,6 +5,8 @@ const initialState = {
   transfers: [],
   sidelined: [],
   availibleSeasons: [],
+  playerClub: null,
+  playerPartners: [],
   loading: false,
 }
 
@@ -49,6 +51,20 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         availibleSeasons: [...action.seasons].reverse(),
+      }
+    }
+    
+    case actionTypes.SET_PLAYER_CLUB: {
+      return {
+        ...state,
+        playerClub: {...action.club},
+      }
+    }
+
+    case actionTypes.SET_PLAYER_PARTNERS: {
+      return {
+        ...state,
+        playerPartners: [...action.players],
       }
     }
 
