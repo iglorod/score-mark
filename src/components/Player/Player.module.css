@@ -5,6 +5,6 @@
 
 @media(max-width: 1090px) {
   .player {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }

@@ -1,0 +1,26 @@
+.sidelined {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideline {
+  display: flex;
+  padding: 5px 10px;
+  margin: 5px auto;
+  width: max-content;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: all .3s;
+}
+
+.sideline > div {
+  margin: 0 10px;
+}
+
+.sideline:hover {
+  margin: 10px auto;
+}
+
+.icon {
+  color: red;
+}
