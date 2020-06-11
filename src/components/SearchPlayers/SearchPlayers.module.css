@@ -1,0 +1,14 @@
+.searhPlayers {
+  height: 30px;
+  width: 120px;
+  margin: auto !important;
+}
+
+.playerItem {
+  color: rgba(0, 0, 0, 0.65) !important;
+  font-size: 12px;
+}
+
+.playerItem:hover {
+  color: rgba(0, 0, 0, 0.45) !important;
+}

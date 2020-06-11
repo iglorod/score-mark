@@ -8,6 +8,7 @@ import Leagues from './MenuItems/Leagues/Leagues';
 import Fixtures from './MenuItems/Fixtures/Fixtures';
 import Auth from './MenuItems/Auth/Auth';
 import TodayFixtures from '../../TodayFixtures/TodayFixtures';
+import SearchPlayers from '../../SearchPlayers/SearchPlayers';
 
 import './Header.css';
 import 'slick-carousel/slick/slick.css';
@@ -45,6 +46,9 @@ const HeaderComponent = () => {
         </div>
         <div className={'auth-actions'}>
           <Auth />
+        </div>
+        <div className={'search-bar'}>
+          <SearchPlayers />
         </div>
       </Header>
       <div className={'today-fixtures'}>
