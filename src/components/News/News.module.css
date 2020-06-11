@@ -1,0 +1,21 @@
+.newsList {
+  margin: 30px 40px;
+}
+
+.cardFooter {
+  color: rbva(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.articleAuthor {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.articlePublished {
+  white-space: nowrap;
+  margin-right: 10px;
+}

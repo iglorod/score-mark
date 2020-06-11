@@ -10,6 +10,7 @@ import Fixture from '../../Fixture/Fixture';
 import League from '../../League/League';
 import Club from '../../Club/Club';
 import Player from '../../Player/Player';
+import News from '../../News/News';
 
 const ContentComponent = () => {
   const { Content } = Layout;
@@ -30,7 +31,7 @@ const ContentComponent = () => {
         <Route path='/team' component={Collection} exact />
         <Route path='/player' component={Admin} exact />
         <Route path='/' component={Main} /> */}
-        <Route path='/' render={() => <div>Content</div>} />
+        <Route path='/' component={News} />
       </Switch>
     </Content>
   )

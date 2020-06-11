@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { Spin } from 'antd';
 import { DoubleRightOutlined } from '@ant-design/icons';
 
 import { fetchTeam } from '../../../../../FakeData/FakeData';
@@ -20,7 +21,7 @@ const TransferClubs = ({ from, to }) => {
       })
   }, [])
 
-  if (!fromTeam || !toTeam ) return null;
+  if (!fromTeam || !toTeam ) return <Spin size={'small'} />;
 
   return (
     <div>
