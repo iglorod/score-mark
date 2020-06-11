@@ -1,12 +1,24 @@
-.round {
-  color: rgba(0, 0, 0, 0.65);
+.round, .currentRound {
   font-size: 16px;
-  padding: 20px 0;
-  border: 1px solid #d2d2d2;
-  border-right: unset;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: all .3s;
 }
 
-.round:hover {
+ .currentRound {
+  background: #f5792254 !important;
+ }
+
+.round:hover, .currentRound:hover {
+  background: #f57922ad !important;
+}
+
+.roundLink {
   color: #000;
-  background: #f7f7f7;
+  padding: 10px 15px;
+  display: block;
+}
+
+.round:hover .roundLink, .currentRound:hover .roundLink {
+  color: #fff !important;
 }

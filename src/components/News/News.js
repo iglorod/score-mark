@@ -31,7 +31,7 @@ const News = () => {
       <Row gutter={[16, 16]}>
         {
           articles.map((article, index) => (
-            <Col key={index} span={8}>
+            <Col key={index} xs={24} sm={12} md={8}>
               <a target='_blank' rel='noopener noreferrer' href={article.url}>
                 <Card
                   hoverable

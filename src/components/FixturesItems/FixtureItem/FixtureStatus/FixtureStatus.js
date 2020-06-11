@@ -1,20 +1,13 @@
 import React from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 import classes from './FixtureStatus.module.css';
 
 const FixtureStatus = ({ fixture }) => {
-  let scores = (
-    <div className={classes.score}>
-      {fixture.goalsHomeTeam} - {fixture.goalsAwayTeam}
-    </div>
-  )
+  let scores = `${fixture.goalsHomeTeam} - ${fixture.goalsAwayTeam}`;
   if (fixture.statusShort === 'NS') {
-    scores = (
-    <div className={classes.score}>
-      {'--'} / {'--'}
-    </div>
-    )
+    scores = '-- / --';
   }
 
   let venue = (
@@ -36,7 +29,17 @@ const FixtureStatus = ({ fixture }) => {
       <div className={classes.fixtureDate}>
         {moment(fixture.event_timestamp * 1000).format('DD.MM.YY hh:mm a')}
       </div>
-      {scores}
+      <div>
+        <Link
+          to={{
+            pathname: '/fixture',
+            state: { id: fixture.fixture_id, }
+          }}
+          className={classes.score}
+        >
+          {scores}
+        </Link>
+      </div>
       <div className={fixture.statusShort === 'FT' ? classes.finished : classes.waited}>
         {fixture.status}
       </div>

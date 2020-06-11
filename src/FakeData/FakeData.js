@@ -1382,6 +1382,45 @@ export const leagueRounds = () => {
                 'Regular_Season_-_15',
                 'Regular_Season_-_16',
                 'Regular_Season_-_17',
+                'Regular_Season_-_18',
+                'Regular_Season_-_19',
+                'Regular_Season_-_20',
+                'Regular_Season_-_21',
+                'Regular_Season_-_22',
+                'Regular_Season_-_23',
+                'Regular_Season_-_24',
+                'Regular_Season_-_25',
+                'Regular_Season_-_26',
+                'Regular_Season_-_27',
+                'Regular_Season_-_28',
+                'Regular_Season_-_29',
+                'Regular_Season_-_30',
+                'Regular_Season_-_31',
+                'Regular_Season_-_32',
+                'Regular_Season_-_33',
+                'Regular_Season_-_34',
+                'Regular_Season_-_35',
+                'Regular_Season_-_36',
+                'Regular_Season_-_37',
+                'Regular_Season_-_38',
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
+
+export const currentLeagueRound = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              fixtures: [
+                'Regular_Season_-_38'
               ]
             }
           }

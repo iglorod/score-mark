@@ -1,13 +1,10 @@
-.rounds {
-  padding: 20px 50px 40px;
-}
-
-.rounds button::before {
-  color: #ff9c56 !important;
-}
-
 .componentTitle {
   font-size: 18px;
+  text-align: center;
+  padding: 10px 30px;
+}
+
+.rounds {
+  padding: 0 30px;
   text-align: left;
-  padding-bottom: 10px;
 }

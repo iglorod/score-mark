@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
 import { connect } from 'react-redux';
 
 import { Spin } from 'antd';
 
-import { leagueRounds } from '../../FakeData/FakeData';
+import { leagueRounds, currentLeagueRound } from '../../FakeData/FakeData';
 import Round from './Round/Round';
 import classes from './LeagueFixtures.module.css';
 
 const LeagueFixtures = ({ windowWidth }) => {
   const [rounds, setRounds] = useState([]);
+  const [currentRound, setCurrentRound] = useState(null);
   const [slidesToShow, setSlidesToShow] = useState(1);
   const [loading, setLoading] = useState(true);
 
@@ -24,6 +24,13 @@ const LeagueFixtures = ({ windowWidth }) => {
   }, [])
 
   useEffect(() => {
+    currentLeagueRound()
+      .then(response => response.api.results.fixtures[0])
+      .then(round => setCurrentRound(round))
+      .catch(error => console.log(error))
+  })
+
+  useEffect(() => {
     const slidesCount = Math.trunc((windowWidth - 100) / 200);
     if (slidesToShow !== slidesCount) {
       setSlidesToShow(slidesCount || 1);
@@ -32,24 +39,16 @@ const LeagueFixtures = ({ windowWidth }) => {
 
   if (loading) return <Spin />
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: slidesToShow,
-    slidesToScroll: 1
-  };
-
   return (
-    <div className={classes.rounds}>
-      <div className={classes.componentTitle}>{'Football Scores & Fixtures'}</div>
-      <Slider {...settings}>
+    <div>
+      <div className={classes.componentTitle}>{'Football Tours'}</div>
+      <div className={classes.rounds}>
         {
           rounds.map((round, index) => (
-            <Round key={index} round={round} />
+            <Round key={index} round={round} current={currentRound === round} />
           ))
         }
-      </Slider>
+      </div>
     </div>
   )
 }

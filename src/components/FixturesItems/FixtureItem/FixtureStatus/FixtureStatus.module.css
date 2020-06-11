@@ -4,6 +4,7 @@
 
 .score {
   font-size: 22px;
+  color: #000 !important;
 }
 
 .finished {

@@ -6,12 +6,13 @@ import { HeatMapOutlined, PlusCircleOutlined, SwapOutlined } from '@ant-design/i
 import Stats from './Stats/Stats';
 import Sidelined from './Sidelined/Sidelined';
 import Transfers from './Transfers/Transfers';
+import classes from './PlayerInfo.module.css';
 
 const PlayerInfo = () => {
   const { TabPane } = Tabs;
 
   return (
-    <Tabs defaultActiveKey='1'>
+    <Tabs className={classes.playerInfo} defaultActiveKey='1'>
       <TabPane
         key='1'
         tab={<><HeatMapOutlined /> {'Statistics'}</>}

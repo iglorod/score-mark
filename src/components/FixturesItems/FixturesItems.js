@@ -2,10 +2,13 @@ import React from 'react';
 
 import { Row, Col, Divider } from 'antd';
 
+import ModalSpinner from '../UI/ModalSpinner/ModalSpinner';
 import FixtureItem from './FixtureItem/FixtureItem';
 import classes from './FixturesItems.module.css';
 
 const FixturesItems = ({ fixtures }) => {
+  if (fixtures.length === 0) return <ModalSpinner />;
+
   return (
     <Row className={classes.fixturesRow}>
       {
