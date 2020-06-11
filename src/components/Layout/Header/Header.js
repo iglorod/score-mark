@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { Layout } from 'antd';
 
@@ -31,7 +32,9 @@ const HeaderComponent = () => {
     <>
       <Header className='header'>
         <div className='logo'>
-          <img src={Logo} alt={'logo'} />
+          <Link to='/'>
+            <img src={Logo} alt={'logo'} />
+          </Link>
         </div>
 
         <div className={'nav-actions'}>

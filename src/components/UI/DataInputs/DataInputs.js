@@ -15,6 +15,7 @@ const AuthInputs = ({ stateInputs, onChangeHandler }) => {
           type={stateInputs[key].config.type}
           value={stateInputs[key].value}
           placeholder={stateInputs[key].config.placeholder}
+          suffix={stateInputs[key].config.suffix}
           onChange={onChangeHandler.bind(this, key)}
         />
       </Form.Item>

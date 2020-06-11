@@ -1,0 +1,62 @@
+.infoSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background: rgba(0,0,0,0.5);
+}
+
+.logo {
+  width: 100px;
+  display: block;
+}
+
+.logoWrapper {
+  margin: 30px 0 5px;
+}
+
+.label {
+  color: #fff !important;
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  display: block;
+}
+
+.hymn {
+  color: rgb(230, 230, 230) !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  display: block;
+}
+
+.backgroundImage {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.info {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  margin: 30px 50px;
+  font-size: 12px;
+  color: rgb(230, 230, 230) !important;
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+}
+
+.footer {
+  color: rgb(173, 173, 173) !important;
+  font-size: 12px;
+  margin-top: 70px;
+}

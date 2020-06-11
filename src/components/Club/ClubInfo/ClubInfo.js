@@ -54,7 +54,7 @@ const ClubInfo = (props) => {
         <div className={classes.clubInfo} ref={logoEl}>
       <div
         className={classes.logoContainer}
-        style={{ position: logoIsFixed ? 'fixed' : 'initial', top: logoIsFixed ? '100px' : 0 }}
+        style={{ position: logoIsFixed ? 'sticky' : 'initial', top: logoIsFixed ? '50px' : 0 }}
       >
         <img src={club.logo} className={classes.logo} alt={'club'} />
       </div>
