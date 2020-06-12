@@ -1,4 +1,4 @@
-// import firebase from '../../firebase';
+import firebase from '../../firebase';
 // import axios from 'axios';
 
 export const saveToLocalStorage = (data) => {
@@ -12,16 +12,16 @@ export const saveToLocalStorage = (data) => {
   }
 }
 
-export const getDataFromLocalStorage = (keys) => {
-  const userData = {};
-  for (let [key, value] of Object.entries(localStorage)) {
-    if (keys.includes(key)) {
-      userData[key] = value;
-    }
-  }
+// export const getDataFromLocalStorage = (keys) => {
+//   const userData = {};
+//   for (let [key, value] of Object.entries(localStorage)) {
+//     if (keys.includes(key)) {
+//       userData[key] = value;
+//     }
+//   }
 
-  return userData;
-}
+//   return userData;
+// }
 
 export const clearLocalStorage = (keys) => {
   for (let key of keys) {
@@ -29,19 +29,19 @@ export const clearLocalStorage = (keys) => {
   }
 }
 
-// export const storeUserImage = (file) => {
-//   const fileName = new Date().getTime() + file.name;
-//   return firebase.storage().ref('user-images/').child(fileName).put(file);
-// }
+export const storeUserImage = (file) => {
+  const fileName = new Date().getTime() + file.name;
+  return firebase.storage().ref('profile-images/').child(fileName).put(file);
+}
 
-// export const removeUserImage = (imageName) => {
-//   return () => {
-//     if (!imageName) return;
+export const removeUserImage = (imageName) => {
+  return () => {
+    if (!imageName) return;
 
-//     firebase.storage().ref(`user-images/${imageName}`).delete()
-//       .catch(error => console.log(error.message));
-//   }
-// }
+    firebase.storage().ref(`profile-images/${imageName}`).delete()
+      .catch(error => console.log(error.message));
+  }
+}
 
 // export const getUserKey = (localId) => {
 //   return new Promise((resolve, reject) => {

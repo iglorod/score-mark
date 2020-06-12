@@ -16,10 +16,11 @@
   font-size: 16px;
   padding: 0 10px;
   cursor: pointer;
+  user-select: none;
 }
 
 .action-button:hover {
-  background: #de7a34;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .profile-button {

@@ -1,12 +1,12 @@
 import * as actionTypes from '../actionTypes';
 import { message } from 'antd';
-import { saveToLocalStorage, getDataFromLocalStorage, clearLocalStorage } from './utility';
+import { saveToLocalStorage, clearLocalStorage } from './utility';
 
 const initialState = {
   localId: null,
   email: null,
   displayName: '',
-  image: '',
+  profilePicture: '',
   idToken: null,
   refreshToken: null,
   expiresIn: null,
@@ -61,9 +61,12 @@ const reducer = (state = initialState, action) => {
     }
 
     case actionTypes.LOGIN: {
-      clearLocalStorage([...Object.keys(initialState)]);
       if (action.rememberMe) {
-        saveToLocalStorage(action.userData);
+        saveToLocalStorage({
+          idToken: action.userData.idToken,
+          refreshToken: action.userData.refreshToken,
+          expiresIn: action.userData.expiresIn,
+        });
       }
 
       const expiresIn = Math.floor((new Date().getTime() / 1000)) + +action.userData.expiresIn;
@@ -74,19 +77,19 @@ const reducer = (state = initialState, action) => {
         localId: action.userData.localId,
         email: action.userData.email,
         displayName: action.userData.displayName,
-        image: action.userData.image || '',
-        idToken: action.userData.idToken,
-        refreshToken: action.userData.refreshToken,
-        expiresIn: expiresIn,
+        profilePicture: action.userData.profilePicture || '',
+        idToken: action.userData.idToken || state.idToken,
+        refreshToken: action.userData.refreshToken || state.refreshToken,
+        expiresIn: expiresIn || state.expiresIn,
         submitting: false,
       }
     }
 
-    case actionTypes.LOGIN_LOCALY: {
+    case actionTypes.SET_LOCAL_TOKEN_DATA: {
       return {
-        ...state,
-        loading: false,
-        ...getDataFromLocalStorage([...Object.keys(initialState)]),
+        idToken: localStorage.getItem('idToken'),
+        refreshToken: localStorage.getItem('refreshToken'),
+        expiresIn: localStorage.getItem('expiresIn'),
       }
     }
 
@@ -112,7 +115,11 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.SET_USER_DATA: {
       message.success('Profile data was updated');
-      saveToLocalStorage(action.data)
+      saveToLocalStorage({
+        idToken: action.data.idToken,
+        refreshToken: action.data.refreshToken,
+        expiresIn: action.data.expiresIn,
+      })
       return {
         ...state,
         ...action.data,

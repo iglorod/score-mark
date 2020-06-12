@@ -5,15 +5,16 @@ import { NavLink } from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 
+import Profile from '../../../../Profile/Profile';
 import ProfileIcon from '../../../../../assets/images/profile.png';
 import { logoutActionCreator } from '../../../../../store/authorization/actions';
 import '../MenuItems.css';
 
 const Auth = (props) => {
   const [visible, setVisible] = useState(false);
+  const [profileVisible, setProfileVisible] = useState(false);
 
   const handleMenuClick = (e) => {
-    console.log('close')
     if (e.key === '1') {
       setVisible(false);
     }
@@ -21,7 +22,7 @@ const Auth = (props) => {
 
   const menu = (
     <Menu onClick={handleMenuClick}>
-      <Menu.Item key='1'><UserOutlined /> My Profile</Menu.Item>
+      <Menu.Item key='1' onClick={setProfileVisible.bind(this, true)}><UserOutlined /> My Profile</Menu.Item>
       <Menu.Item key='2' onClick={props.logout}><LogoutOutlined /> Logout</Menu.Item>
     </Menu>
   );
@@ -49,7 +50,14 @@ const Auth = (props) => {
     )
   }
 
-  return authLinks;
+  return (
+    <React.Fragment>
+      {authLinks}
+      <Profile
+        open={profileVisible}
+        closeModal={setProfileVisible.bind(this, false)} />
+    </React.Fragment>
+  )
 }
 
 const mapStateToProps = (state) => {

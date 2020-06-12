@@ -17,7 +17,7 @@ const LayoutComponent = (props) => {
   useEffect(() => {
     signInLocally();
   }, [signInLocally])
-  
+
   useEffect(() => {
     checkWidth.current();
     window.addEventListener('resize', checkWidth.current);
@@ -37,19 +37,16 @@ const LayoutComponent = (props) => {
     }
   }, 1500));
 
-  let content = (
-    <Layout>
-      <Layout>
-        <Content />
-      </Layout>
-    </Layout>
-  )
-  if (loading) content = <ModalSpinner />
+  if (loading) return <ModalSpinner />
 
   return (
     <Layout className='main-layout'>
       <Header />
-      {content}
+      <Layout>
+        <Layout>
+          <Content />
+        </Layout>
+      </Layout>
     </Layout>
   )
 }

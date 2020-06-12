@@ -1,0 +1,27 @@
+.picture, .pictureAlt {
+  width: 130px;
+  display: block;
+  margin: 0 10px;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.pictureAlt {
+  font-size: 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.25);
+  height: 100px;
+  padding-top: 35px;
+  border: 1px dashed rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: ease .3s;
+}
+
+.pictureAlt:hover {
+  color: inherit;
+  border: 1px dashed rgba(0, 0, 0, 0.45);
+}
+
+.formItem {
+  margin: 0;
+  height: 100%;
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Layout } from 'antd';
 
-import Logo from '../../../assets/images/logo.png';
+import Logo from '../../../assets/images/logoWhite.png';
 import Leagues from './MenuItems/Leagues/Leagues';
 import Fixtures from './MenuItems/Fixtures/Fixtures';
 import Auth from './MenuItems/Auth/Auth';

@@ -1,6 +1,8 @@
 import * as actionTypes from '../actionTypes';
 import axios from 'axios';
 
+import { storeUserImage, removeUserImage } from './utility';
+
 export const startLoadingActionCreator = () => {
   return {
     type: actionTypes.START_LOADING,
@@ -21,9 +23,9 @@ export const loginActionCreator = (userData, rememberMe = false) => {
   }
 }
 
-export const loginByLocalDataActionCreator = () => {
+export const setTokenFromLocalStorage = () => {
   return {
-    type: actionTypes.LOGIN_LOCALY,
+    type: actionTypes.SET_LOCAL_TOKEN_DATA,
   }
 }
 
@@ -74,7 +76,7 @@ export const logoutActionCreator = () => {
 }
 
 //middleware
-export const resetTokenTimer = () => { //set token auto-refreshing
+export const resetTokenTimer = (callback) => { //set token auto-refreshing
   return (dispatch, getState) => {
     clearTimeout(getState().auth.refreshTimerId);
 
@@ -89,12 +91,17 @@ export const resetTokenTimer = () => { //set token auto-refreshing
           refresh_token: getState().auth.refreshToken
         };
         try {
-          dispatch(refreshTokenActionCreator(refreshData));
+          dispatch(refreshTokenActionCreator(refreshData, callback));
         } catch (error) {
           console.log(error)
         }
       }, delay
     );
+
+    if (delay !== 0 && callback) {
+      setTimeout(() => dispatch(callback()), 0);
+    }
+
     dispatch(setTimeoutIdActionCreator(timerId));
   }
 }
@@ -140,15 +147,15 @@ export const signInActionCreator = (userData, rememberMe) => {
 export const signInLocallyActionCreator = () => {
   return (dispatch) => {
     if (localStorage.getItem('idToken')) {
-      dispatch(loginByLocalDataActionCreator());
-      dispatch(resetTokenTimer());
+      dispatch(setTokenFromLocalStorage());
+      dispatch(resetTokenTimer(fetchLastUserDataActionCreator));
+    } else {
+      dispatch(finishLoadingActionCreator());
     }
-
-    dispatch(finishLoadingActionCreator());
   }
 }
 
-export const refreshTokenActionCreator = (token) => {
+export const refreshTokenActionCreator = (token, callback) => {
   return dispatch => {
     axios.post(`https://securetoken.googleapis.com/v1/token?key=${process.env.REACT_APP_FIREBASE_KEY}`, token)
       .then(response => {
@@ -159,10 +166,63 @@ export const refreshTokenActionCreator = (token) => {
         }
         dispatch(setNewTokenActionCreator(newTokenData)); //refreshing token
         dispatch(resetTokenTimer());
+        if (callback) {
+          dispatch(callback());
+        }
       })
       .catch(err => {
         dispatch(authErrorActionCreator(err));
         dispatch(logoutActionCreator());
       });
+  }
+}
+
+export const updateUserDataActionCreator = ({ username, image }) => {
+  return (dispatch, getState) => {
+    dispatch(authStartActionCreator());
+    const token = getState().auth.idToken;
+
+    const updateData = {};
+    if (username) updateData.displayName = username;
+    if (image) updateData.photoUrl = image;
+    updateData.idToken = token;
+    updateData.returnSecureToken = false;
+
+    axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:update?key=${process.env.REACT_APP_FIREBASE_KEY}`, updateData)
+      .then(response => response.data)
+      .then(({ photoUrl, displayName }) => dispatch(setUserDataActionCreator({ profilePicture: photoUrl, displayName, })))
+      .then(() => dispatch(authFinishActionCreator()))
+      .catch(error => dispatch(authErrorActionCreator(error)))
+  }
+}
+
+export const uploadUserImageActionCreator = (userData) => {
+  return dispatch => {
+    dispatch(authStartActionCreator());
+    if (!userData.image) {
+      return dispatch(updateUserDataActionCreator(userData));
+    }
+
+    storeUserImage(userData.image)
+      .then(response => {
+        const { name: image } = response.metadata;
+
+        dispatch(removeUserImage(userData.oldImage));
+        dispatch(updateUserDataActionCreator({ ...userData, image }));
+      })
+      .catch(error => dispatch(authErrorActionCreator(error)))
+  }
+}
+
+export const fetchLastUserDataActionCreator = () => {
+  return (dispatch, getState) => {
+    const idToken = getState().auth.idToken;
+
+    axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${process.env.REACT_APP_FIREBASE_KEY}`, { idToken })
+      .then(response => response.data)
+      .then(usersList => usersList.users[0])
+      .then(userData => dispatch(loginActionCreator({ ...userData, profilePicture: userData.photoUrl })))
+      .then(() => dispatch(finishLoadingActionCreator()))
+      .catch(error => dispatch(authErrorActionCreator(error)))
   }
 }

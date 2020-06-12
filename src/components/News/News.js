@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { Card, Row, Col } from 'antd';
 
+import ModalSpinner from '../UI/ModalSpinner/ModalSpinner';
 import classes from './News.module.css';
 
 const News = () => {
@@ -25,6 +26,8 @@ const News = () => {
       <div className={classes.articleAuthor}>{author}</div>
     </div>
   )
+
+  if (articles.length === 0) return <ModalSpinner />;
 
   return (
     <div className={classes.newsList}>
