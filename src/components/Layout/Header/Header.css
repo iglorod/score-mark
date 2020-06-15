@@ -30,3 +30,45 @@
   float: right;
   display: flex;
 }
+
+@media (max-width: 815px) {
+  .header {
+    padding: 0 5px !important;
+  }
+  .header .nav-actions {
+    padding: 0 5px;
+  }
+  .auth-actions {
+    padding: 0 5px;
+  }
+  .profile-button {
+    height: 25px;
+    margin-top: 80%;
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .logo {
+    overflow: hidden;
+    max-width: 70px;
+  }
+}
+
+@media (max-width: 580px) {
+  .action-button {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+  .ant-cascader-menu {
+    font-size: 12px !important;
+  }
+  .ant-cascader-menu:nth-child(2) {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+  .ant-cascader-menus>div {
+    display: flex;
+    flex-direction: column;
+  }
+}

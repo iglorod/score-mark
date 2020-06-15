@@ -3,3 +3,10 @@
   margin-top: 25px !important;
   margin-left: 15px !important;
 }
+
+@media (max-width: 1000px) {
+  .clubDetails {
+    margin: 10px 5px !important;
+    padding: 0 10px !important;
+  }
+}

@@ -30,3 +30,10 @@
 .auth-section .ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
   box-shadow: 0 0 0 2px #ff9c56bd !important;
 }
+
+@media (max-width: 815px) {
+  .auth-section form {
+    padding: 0 30px;
+    width: 100%;
+  }
+}

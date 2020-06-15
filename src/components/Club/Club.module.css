@@ -2,3 +2,9 @@
   display: flex;
   margin-bottom: 30px;
 }
+
+@media (max-width: 1000px) {
+  .club {
+    flex-direction: column;
+  }
+}

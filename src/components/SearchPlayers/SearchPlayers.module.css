@@ -12,3 +12,10 @@
 .playerItem:hover {
   color: rgba(0, 0, 0, 0.45) !important;
 }
+
+@media (max-width: 580px) {
+  .searhPlayers {
+    font-size: 12px !important;
+    width: 100px;
+  }
+}
