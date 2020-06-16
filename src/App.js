@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import 'antd/dist/antd.css';
+import 'three-dots/dist/three-dots.min.css';
 import './App.css';
 
 function App() {

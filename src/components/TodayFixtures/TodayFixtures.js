@@ -7,7 +7,7 @@ import { todayFixtures } from '../../FakeData/FakeData';
 import Fixture from './Fixture/Fixture';
 import './TodayFixtures.css';
 
-const TodayFixtures = ({ mobileMode, windowWidth }) => {
+const TodayFixtures = ({ windowWidth }) => {
   const [fixtures, setFixtures] = useState([]);
   const [slidesToShow, setSlidesToShow] = useState(1);
 
@@ -27,10 +27,10 @@ const TodayFixtures = ({ mobileMode, windowWidth }) => {
     }
   }, [windowWidth])
 
-  if (fixtures.length === 0) return null;
+  if (fixtures.length === 0) return <div className={'dot-pulse'}></div>;
 
   const settings = {
-    dots: !mobileMode,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: slidesToShow,
@@ -41,7 +41,7 @@ const TodayFixtures = ({ mobileMode, windowWidth }) => {
   };
 
   return (
-    <div>
+    <div className={'fixtures-list'}>
       <Slider {...settings}>
         {
           fixtures.map((fixture, index) => (
@@ -55,7 +55,6 @@ const TodayFixtures = ({ mobileMode, windowWidth }) => {
 
 const mapStateToProps = (state) => {
   return {
-    mobileMode: state.mode.mobile,
     windowWidth: state.mode.windowWidth,
   }
 }

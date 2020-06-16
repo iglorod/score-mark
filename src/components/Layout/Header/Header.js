@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { Layout } from 'antd';
 
-import Logo from '../../../assets/images/logoWhite.png';
-import Leagues from './MenuItems/Leagues/Leagues';
+import Leagues from './MenuItems/LeaguesCascader/LeaguesCascader';
 import Fixtures from './MenuItems/Fixtures/Fixtures';
 import Auth from './MenuItems/Auth/Auth';
 import TodayFixtures from '../../TodayFixtures/TodayFixtures';
 import SearchPlayers from '../../SearchPlayers/SearchPlayers';
+import Logo from './Logo/Logo';
 
 import './Header.css';
 import 'slick-carousel/slick/slick.css';
@@ -17,7 +16,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const { Header } = Layout;
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ loading }) => {
   const [openCascaderId, setOpenCascaderId] = useState(-1);
 
   const openCascader = (id) => {
@@ -30,13 +29,17 @@ const HeaderComponent = () => {
 
   return (
     <>
+      <div className={'today-fixtures'}>
+        <TodayFixtures />
+      </div>
       <Header className='header'>
-        <div className='logo'>
-          <Link to='/'>
-            <img src={Logo} alt={'logo'} />
-          </Link>
+        <Logo />
+        <div className={'search-bar'}>
+          <SearchPlayers />
         </div>
-
+        <div className={'auth-actions'}>
+          <Auth />
+        </div>
         <div className={'nav-actions'}>
           <Leagues
             cascaderIsOpen={openCascaderId === 0}
@@ -47,15 +50,9 @@ const HeaderComponent = () => {
             openCascader={openCascader.bind(this, 1)}
             closeCascader={closeCascader} />
         </div>
-        <div className={'auth-actions'}>
-          <Auth />
-        </div>
-        <div className={'search-bar'}>
-          <SearchPlayers />
-        </div>
       </Header>
-      <div className={'today-fixtures'}>
-        <TodayFixtures />
+      <div className={'bottomLine'}>
+        <div className={loading ? 'loading' : 'stable'}></div>
       </div>
     </>
   )
@@ -63,7 +60,7 @@ const HeaderComponent = () => {
 
 const mapStateToProps = (state) => {
   return {
-    email: state.auth.email,
+    loading: state.auth.submitting || state.club.loading || state.fxt.loading || state.plr.loading,
   }
 }
 

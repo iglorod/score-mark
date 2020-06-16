@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.2.5",
     "axios": "^0.19.2",
+    "disqus-react": "^1.0.8",
     "firebase": "^7.15.1",
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
@@ -20,7 +21,8 @@
     "react-slick": "^0.26.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "three-dots": "^0.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

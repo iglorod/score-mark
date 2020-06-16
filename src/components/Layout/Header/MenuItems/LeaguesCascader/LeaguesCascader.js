@@ -3,14 +3,14 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
 import { Cascader } from 'antd';
-import { CaretDownOutlined } from '@ant-design/icons';
 
 import { LeagesByCountry } from '../../../../../FakeData/FakeData';
 import '../MenuItems.css';
 
-const Leagues = (props) => {
-  const [countries, setCountries] = useState([{ label: 'Countries', value: null, loading: true }]);
+const LeaguesCascader = (props) => {
+  const { icon, text, path } = props;
 
+  const [countries, setCountries] = useState([{ label: 'Countries', value: null, loading: true }]);
 
   useEffect(() => {
     axios.get('https://restcountries.eu/rest/v2/all?fields=nativeName;alpha2Code')
@@ -59,7 +59,7 @@ const Leagues = (props) => {
 
     if (targetOption.isLeaf === undefined) {
       props.history.push({
-        pathname: '/league',
+        pathname: { path },
         state: {
           leagueId: targetOption.value,
         }
@@ -82,7 +82,7 @@ const Leagues = (props) => {
         className={'action-button'}
         onClick={togglePopup}
       >
-        <CaretDownOutlined /> {'Leagues'}
+        {icon} {text}
       </div>
       <Cascader
         className={'popup-input'}
@@ -96,4 +96,4 @@ const Leagues = (props) => {
   )
 }
 
-export default withRouter(Leagues);
+export default withRouter(LeaguesCascader);

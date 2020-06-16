@@ -1,0 +1,10 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.item:hover {
+  color: #f57922;
+}

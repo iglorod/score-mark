@@ -2,13 +2,13 @@
   display: flex;
 }
 
-.fixtureDate {
+.fixtureData {
   color: #fff !important;
   font-size: 12px;
   transition: all .1s;
 }
 
-.fixtureDate:hover {
+.fixtureData:hover {
   color: rgb(214, 214, 214) !important;
 }
 
@@ -25,4 +25,16 @@
 
 .fixtureLeague:hover {
   color: #f57922 !important;
+}
+
+.fixtureTime {
+  font-size: 12px;
+}
+
+.awayClub {
+  padding-left: 5px;
+}
+
+.homeClub {
+  padding-right: 5px;
 }

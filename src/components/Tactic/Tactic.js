@@ -10,7 +10,7 @@ import FixtureStats from './FixtureStats/FixtureStats';
 import FixtureEvents from './FixtureEvents/FixtureEvents';
 import { fetchFixturesActionCreator } from '../../store/fixture/actions';
 
-const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
+const Tactic = ({ loading, fixture, fetchFixtures, windowWidth }) => {
   const [activeKey, setActiveKey] = useState('1');
   const [showMatchCentre, setShowMatchCentre] = useState(true);
   const { TabPane } = Tabs;
@@ -33,7 +33,7 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
     }
   }, [windowWidth])
 
-  if (loading) return <Spin />
+  if (loading || !fixture) return <Spin />
 
   const changeActiveKey = (key) => {
     setActiveKey(key);
@@ -77,6 +77,7 @@ const Tactic = ({ loading, fetchFixtures, windowWidth }) => {
 
 const mapStateToProps = (state) => {
   return {
+    fixture: state.fxt.fixture,
     loading: state.fxt.loading,
     windowWidth: state.mode.windowWidth,
   }

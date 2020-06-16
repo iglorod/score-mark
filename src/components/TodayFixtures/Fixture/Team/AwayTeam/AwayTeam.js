@@ -9,7 +9,7 @@ const AwayTeam = ({ fixture }) => {
       <div className={classes.dateArea}>
         <div>
           <Link
-            className={classes.fixtureDate}
+            className={classes.fixtureData}
             to={{
               pathname: '/club',
               state: {
@@ -19,7 +19,7 @@ const AwayTeam = ({ fixture }) => {
             {fixture.awayTeam.team_name}
           </Link>
         </div>
-        <div>
+        <div className={classes.awayClub}>
           <img src={fixture.awayTeam.logo} width={25} alt={'home'} />
         </div>
       </div>
@@ -35,7 +35,7 @@ const AwayTeam = ({ fixture }) => {
           {fixture.league.name}
         </Link>
       </div>
-      <div>
+      <div className={classes.fixtureTime}>
         {`${fixture.elapsed}' m.`}
       </div>
     </div>

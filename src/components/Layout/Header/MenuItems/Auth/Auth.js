@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { Menu, Dropdown } from 'antd';
-import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
+import { UserOutlined, LoginOutlined, UserAddOutlined, LogoutOutlined } from '@ant-design/icons';
 
 import Profile from '../../../../Profile/Profile';
 import ProfileIcon from '../../../../../assets/images/profile.png';
+import MenuItem from '../ItemCascade/ItemCascade';
 import { logoutActionCreator } from '../../../../../store/authorization/actions';
 import '../MenuItems.css';
 
@@ -44,8 +45,12 @@ const Auth = (props) => {
   if (!props.email) {
     authLinks = (
       <>
-        <NavLink className={'action-button'} to='/sign-in'>Sign In</NavLink>
-        <NavLink className={'action-button'} to='/sign-up'>Sign Up</NavLink>
+        <NavLink className={'action-button'} to='/sign-in'>
+          <MenuItem icon={<LoginOutlined />} text={'Sign In'} />
+        </NavLink>
+        <NavLink className={'action-button'} to='/sign-up'>
+          <MenuItem icon={<UserAddOutlined />} text={'Sign Up'} />
+        </NavLink>
       </>
     )
   }

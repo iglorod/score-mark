@@ -8,12 +8,12 @@ const HomeTeam = ({ fixture }) => {
   return (
     <div>
       <div className={classes.dateArea}>
-        <div>
+        <div className={classes.homeClub}>
           <img src={fixture.homeTeam.logo} width={25} alt={'home'} />
         </div>
         <div>
           <Link
-            className={classes.fixtureDate}
+            className={classes.fixtureData}
             to={{
               pathname: '/club',
               state: {
@@ -36,8 +36,8 @@ const HomeTeam = ({ fixture }) => {
           {fixture.league.name}
         </Link>
       </div>
-      <div>
-      {moment(fixture.event_timestamp * 1000).format('hh:mm a')}
+      <div className={classes.fixtureTime}>
+        {moment(fixture.event_timestamp * 1000).format('hh:mm a')}
       </div>
     </div>
   )

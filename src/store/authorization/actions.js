@@ -90,11 +90,8 @@ export const resetTokenTimer = (callback) => { //set token auto-refreshing
           grant_type: 'refresh_token',
           refresh_token: getState().auth.refreshToken
         };
-        try {
-          dispatch(refreshTokenActionCreator(refreshData, callback));
-        } catch (error) {
-          console.log(error)
-        }
+
+        dispatch(refreshTokenActionCreator(refreshData, callback));
       }, delay
     );
 
