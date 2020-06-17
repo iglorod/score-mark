@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { debounce } from 'lodash';
 import { Link } from 'react-router-dom';
 
-import { AutoComplete } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { AutoComplete, Input } from 'antd';
+import { UserOutlined, SearchOutlined } from '@ant-design/icons';
 
 import { searchPlayer as fetchPlayersByName } from '../../FakeData/FakeData';
 import classes from './SearchPlayers.module.css';
@@ -46,16 +46,19 @@ const SearchPlayers = () => {
 
   return (
     <AutoComplete
-      value={searchWord}
-      placeholder='Search players'
       className={classes.searhPlayers}
+      value={searchWord}
       onInput={handleChange}
       options={
         recivedPlayers.map((player) => (
           renderPlayerItem(player)
         ))
       }
-    />
+    >
+      <Input
+        placeholder='Search here...'
+        suffix={<SearchOutlined />} />
+    </AutoComplete>
   )
 }
 

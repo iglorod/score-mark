@@ -1,21 +1,34 @@
 .searhPlayers {
   height: 30px;
-  width: 150px;
+  min-width: 400px;
   margin: auto !important;
 }
 
+.searhPlayers input {
+  color: #555 !important;
+  background: #faf7fd !important;
+}
+
+.searhPlayers input:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.searhPlayers input::placeholder {
+  color: #696969;
+}
+
 .playerItem {
-  color: rgba(0, 0, 0, 0.65) !important;
+  color: #555 !important;
   font-size: 12px;
+  font-family: "Varela Round", sans-serif;
 }
 
 .playerItem:hover {
-  color: rgba(0, 0, 0, 0.45) !important;
+  color: #000 !important;
 }
 
-@media (max-width: 580px) {
-  .searhPlayers {
-    font-size: 12px !important;
-    width: 100px;
-  }
+.placeholder {
+  color: #000 !important;
+  text-align: left;
 }

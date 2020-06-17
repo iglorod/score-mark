@@ -7,8 +7,10 @@ import classes from './Logo.module.css';
 const Logo = () => {
   return (
     <div className={classes.logo}>
-      <Link to='/'>
-        <img src={Picture} alt={'logo'} />
+      <Link className={classes.logoLink} to='/'>
+        <div>
+          <img src={Picture} alt={'logo'} />
+        </div>
         <div className={classes.name}>Score<b>Mark</b></div>
       </Link>
     </div>

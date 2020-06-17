@@ -1,20 +1,26 @@
 .header {
+  color: #1B2021;
   font-family: 'Varela Round', sans-serif;
-  height: 54px !important;
+  height: 60px !important;
   line-height: normal !important;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 20px !important;
   background: #fff !important;
 }
 
 .header .nav-actions {
   height: 100%;
-  float: right;
   display: flex;
   align-items: center;
 }
 
+.header .menu-items {
+  display: flex;
+}
+
 .header .auth-actions {
   height: 100%;
-  float: right;
   display: flex;
   align-items: center;
 }
@@ -22,7 +28,6 @@
 .header .search-bar {
   height: 100%;
   padding: 0 20px;
-  float: left;
   display: flex;
 }
 
@@ -40,6 +45,7 @@
 }
 
 .loading {
+  height: 3px;
   animation: 2s loadingProgress infinite;
 }
 

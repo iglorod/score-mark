@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 
 import { DatePicker } from 'antd';
-import { ClockCircleFilled, CalendarFilled, StarFilled, DatabaseFilled } from '@ant-design/icons';
+import { ClockCircleFilled, CalendarFilled, StarFilled, AppstoreFilled } from '@ant-design/icons';
 
 import ItemCascade from '../ItemCascade/ItemCascade';
 import classes from './Fixtures.module.css';
@@ -11,9 +11,14 @@ import '../MenuItems.css';
 
 const Fixtures = (props) => {
   const [showCalendar, setShowCalendar] = useState(false);
+  const [openCascaderId, setOpenCascaderId] = useState(-1);
 
-  const closeDropdown = () => {
-    setTimeout(() => props.closeCascader(), 300);
+  const openCascader = (id) => {
+    setOpenCascaderId(id);
+  }
+
+  const closeCascader = () => {
+    setOpenCascaderId(-1);
   }
 
   function onDatePicked(date) {
@@ -23,8 +28,8 @@ const Fixtures = (props) => {
       pathname: '/fixtures',
       state: { date: date._d }
     })
-
-    closeDropdown();
+ 
+    closeCascader();
   }
 
   const toggleShowCalendar = () => {
@@ -35,24 +40,31 @@ const Fixtures = (props) => {
     setShowCalendar(false);
   }
 
-  let calendar = null;
-  if (showCalendar) {
-    calendar = (
-      <DatePicker
-        open
-        className={'popup-input'}
-        autoFocus={true}
-        onBlur={hideCalendar}
-        onChange={onDatePicked} />
-    )
-  }
-
   return (
     <div className={classes.fixturesLinks}>
-      <LeaguesCascader icon={<StarFilled />} text={'League'} path={'/league'} />
-      <LeaguesCascader icon={<DatabaseFilled />} text={'Fixtures'} path={'/fixtures'} />
-      <ItemCascade text={'From Date'} icon={<CalendarFilled />} onClick={toggleShowCalendar} />
-      {calendar}
+      <LeaguesCascader
+        icon={props => <StarFilled {...props} />}
+        text={'League'}
+        path={'/league'}
+        cascaderIsOpen={openCascaderId === 0}
+        openCascader={openCascader.bind(this, 0)}
+        closeCascader={closeCascader} />
+
+      <LeaguesCascader
+        icon={props => <AppstoreFilled {...props} />}
+        text={'Fixtures'}
+        path={'/fixtures'}
+        cascaderIsOpen={openCascaderId === 1}
+        openCascader={openCascader.bind(this, 1)}
+        closeCascader={closeCascader} />
+
+      <ItemCascade text={'Date'} icon={<CalendarFilled />} onClick={toggleShowCalendar} />
+      <DatePicker
+        open={showCalendar}
+        className={'popup-input'}
+        autoFocus={true}
+        onOpenChange={open => open ? null : hideCalendar()}
+        onChange={onDatePicked} />
 
       <NavLink
         className={'action-button'}

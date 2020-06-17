@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { Layout } from 'antd';
 
-import Leagues from './MenuItems/LeaguesCascader/LeaguesCascader';
 import Fixtures from './MenuItems/Fixtures/Fixtures';
 import Auth from './MenuItems/Auth/Auth';
 import TodayFixtures from '../../TodayFixtures/TodayFixtures';
@@ -17,16 +16,6 @@ import 'slick-carousel/slick/slick-theme.css';
 const { Header } = Layout;
 
 const HeaderComponent = ({ loading }) => {
-  const [openCascaderId, setOpenCascaderId] = useState(-1);
-
-  const openCascader = (id) => {
-    setOpenCascaderId(id);
-  }
-
-  const closeCascader = () => {
-    setOpenCascaderId(-1);
-  }
-
   return (
     <>
       <div className={'today-fixtures'}>
@@ -37,18 +26,13 @@ const HeaderComponent = ({ loading }) => {
         <div className={'search-bar'}>
           <SearchPlayers />
         </div>
-        <div className={'auth-actions'}>
-          <Auth />
-        </div>
-        <div className={'nav-actions'}>
-          <Leagues
-            cascaderIsOpen={openCascaderId === 0}
-            openCascader={openCascader.bind(this, 0)}
-            closeCascader={closeCascader} />
-          <Fixtures
-            cascaderIsOpen={openCascaderId === 1}
-            openCascader={openCascader.bind(this, 1)}
-            closeCascader={closeCascader} />
+        <div className={'menu-items'}>
+          <div className={'nav-actions'}>
+            <Fixtures />
+          </div>
+          <div className={'auth-actions'}>
+            <Auth />
+          </div>
         </div>
       </Header>
       <div className={'bottomLine'}>

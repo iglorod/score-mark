@@ -5202,3 +5202,33 @@ export const searchPlayer = () => {
     }, 1000)
   })
 }
+
+
+export const fixturePredictions = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              predictions: [
+                {
+                  'match_winner': '1',
+                  'under_over': null,
+                  'goals_home': '-3.5',
+                  'goals_away': '-1.5',
+                  'advice': 'Winner : Paris Saint Germain',
+                  'winning_percent': {
+                    'home': '50%',
+                    'draws': '37%',
+                    'away': '13%',
+                  }
+                }
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}

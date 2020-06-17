@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Progress } from 'antd';
+
 import classes from '../Team.module.css';
 
-const HomeTeam = ({ fixture }) => {
+const HomeTeam = ({ fixture, winningPercent }) => {
   return (
-    <div>
+    <div className={classes.clubData}>
+      <div>
+        <img src={fixture.homeTeam.logo} width={70} alt={'home'} />
+      </div>
       <div className={classes.dateArea}>
         <div>
-          <img src={fixture.homeTeam.logo} height={35} alt={'home'} />
-        </div>
-        <div>
           <Link
-            className={classes.fixtureDate}
+            className={classes.clubName}
             to={{
               pathname: '/club',
               state: {
@@ -22,8 +24,9 @@ const HomeTeam = ({ fixture }) => {
             {fixture.homeTeam.team_name}
           </Link>
         </div>
+        <div className={classes.additionalData}>{fixture.round}</div>
+        <div><Progress strokeWidth={5} percent={winningPercent.replace(/%/, '')} /></div>
       </div>
-      <div className={classes.additionalData}>{fixture.round}</div>
     </div>
   )
 }
