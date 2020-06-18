@@ -52,7 +52,6 @@ const reducer = (state = initialState, action) => {
       let errorMessage = 'Service is unavailable. Please, try later...';
       if (action.error.response) errorMessage = action.error.response.data.error.message;
 
-      message.error(errorMessage);
       return {
         ...state,
         errorMessage,
