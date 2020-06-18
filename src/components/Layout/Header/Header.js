@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 import { Layout } from 'antd';
 
-import Fixtures from './MenuItems/Fixtures/Fixtures';
-import Auth from './MenuItems/Auth/Auth';
+import MenuItems from './MenuItems/MenuItems';
 import TodayFixtures from '../../TodayFixtures/TodayFixtures';
 import SearchPlayers from '../../SearchPlayers/SearchPlayers';
 import Logo from './Logo/Logo';
@@ -21,20 +20,17 @@ const HeaderComponent = ({ loading }) => {
       <div className={'today-fixtures'}>
         <TodayFixtures />
       </div>
+     
       <Header className='header'>
         <Logo />
+      
         <div className={'search-bar'}>
           <SearchPlayers />
         </div>
-        <div className={'menu-items'}>
-          <div className={'nav-actions'}>
-            <Fixtures />
-          </div>
-          <div className={'auth-actions'}>
-            <Auth />
-          </div>
-        </div>
+
+        <MenuItems />
       </Header>
+     
       <div className={'bottomLine'}>
         <div className={loading ? 'loading' : 'stable'}></div>
       </div>

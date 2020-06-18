@@ -29,6 +29,23 @@ export const clearLocalStorage = (keys) => {
   }
 }
 
+export const calculateRefreshTokenDelay = (expiresIn) => {
+  return (expiresIn - Math.floor((new Date().getTime() / 1000))) * 1000 - 30 * 1000;
+}
+
+export const setRefreshTokenTimer = (delay, refreshToken, dispatch, action, callback) => {
+  return setTimeout(
+    () => {
+      const refreshData = {
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken
+      };
+
+      dispatch(action(refreshData, callback));
+    }, delay
+  );
+}
+
 export const storeUserImage = (file) => {
   const fileName = new Date().getTime() + file.name;
   return firebase.storage().ref('profile-images/').child(fileName).put(file);

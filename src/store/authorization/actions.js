@@ -1,7 +1,7 @@
 import * as actionTypes from '../actionTypes';
 import axios from 'axios';
 
-import { storeUserImage, removeUserImage } from './utility';
+import { storeUserImage, removeUserImage, calculateRefreshTokenDelay, setRefreshTokenTimer } from './utility';
 
 export const startLoadingActionCreator = () => {
   return {
@@ -80,22 +80,10 @@ export const resetTokenTimer = (callback) => { //set token auto-refreshing
   return (dispatch, getState) => {
     clearTimeout(getState().auth.refreshTimerId);
 
-    let delay = (getState().auth.expiresIn - Math.floor((new Date().getTime() / 1000))) * 1000 - 30 * 1000;
+    const delay = calculateRefreshTokenDelay(getState().auth.expiresIn);
+    const timerId = setRefreshTokenTimer(delay, getState().auth.refreshToken, dispatch, refreshTokenActionCreator, callback);
 
-    if (delay < 0) delay = 0;
-
-    const timerId = setTimeout(
-      () => {
-        const refreshData = {
-          grant_type: 'refresh_token',
-          refresh_token: getState().auth.refreshToken
-        };
-
-        dispatch(refreshTokenActionCreator(refreshData, callback));
-      }, delay
-    );
-
-    if (delay !== 0 && callback) {
+    if (delay > 0 && callback) {    //fetch user data
       setTimeout(() => dispatch(callback()), 0);
     }
 
@@ -133,10 +121,8 @@ export const signInActionCreator = (userData, rememberMe) => {
       returnSecureToken: true
     }
     axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_KEY}`, authData)
-      .then(response => {
-        dispatch(loginActionCreator(response.data, rememberMe));
-        dispatch(resetTokenTimer());
-      })
+      .then(response => dispatch(loginActionCreator(response.data, rememberMe)))
+      .then(() => dispatch(resetTokenTimer()))
       .catch(error => dispatch(authErrorActionCreator(error)))
   }
 }
@@ -155,18 +141,14 @@ export const signInLocallyActionCreator = () => {
 export const refreshTokenActionCreator = (token, callback) => {
   return dispatch => {
     axios.post(`https://securetoken.googleapis.com/v1/token?key=${process.env.REACT_APP_FIREBASE_KEY}`, token)
-      .then(response => {
-        const newTokenData = {
-          idToken: response.data.id_token,
-          refreshToken: response.data.refresh_token,
-          expiresIn: +response.data.expires_in,
-        }
-        dispatch(setNewTokenActionCreator(newTokenData)); //refreshing token
-        dispatch(resetTokenTimer());
-        if (callback) {
-          dispatch(callback());
-        }
-      })
+      .then(response => ({
+        idToken: response.data.id_token,
+        refreshToken: response.data.refresh_token,
+        expiresIn: +response.data.expires_in,
+      }))
+      .then(newTokenData => dispatch(setNewTokenActionCreator(newTokenData))) //refreshing token
+      .then(() => dispatch(resetTokenTimer()))
+      .then(() => callback ? dispatch(callback()) : null)
       .catch(err => {
         dispatch(authErrorActionCreator(err));
         dispatch(logoutActionCreator());

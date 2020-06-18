@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classes from './ItemCascade.module.css';
+import classes from './CustomMenuItem.module.css';
 
-const ItemCascade = ({icon, text, onClick}) => {
+const CustomMenuItem = ({icon, text, onClick}) => {
   return (
     <div className={classes.item} onClick={onClick}>
       <div>{icon}</div>
@@ -11,4 +11,4 @@ const ItemCascade = ({icon, text, onClick}) => {
   )
 }
 
-export default ItemCascade;
+export default CustomMenuItem;

@@ -4,12 +4,11 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { DatePicker } from 'antd';
 import { ClockCircleFilled, CalendarFilled, StarFilled, AppstoreFilled } from '@ant-design/icons';
 
-import ItemCascade from '../ItemCascade/ItemCascade';
-import classes from './Fixtures.module.css';
-import LeaguesCascader from '../LeaguesCascader/LeaguesCascader';
-import '../MenuItems.css';
+import ItemCascade from '../../../../UI/CustomMenuItem/CustomMenuItem';
+import LeaguesCascader from '../../../../UI/LeaguesCascader/LeaguesCascader';
+import classes from './Actions.module.css';
 
-const Fixtures = (props) => {
+const Actions = (props) => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [openCascaderId, setOpenCascaderId] = useState(-1);
 
@@ -79,4 +78,4 @@ const Fixtures = (props) => {
   )
 }
 
-export default withRouter(Fixtures);
+export default withRouter(Actions);

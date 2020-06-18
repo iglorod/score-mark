@@ -5,10 +5,9 @@ import { withRouter } from 'react-router-dom';
 import { Cascader } from 'antd';
 import { EnvironmentFilled } from '@ant-design/icons';
 
-import ItemCascade from '../ItemCascade/ItemCascade';
-import { LeagesByCountry } from '../../../../../FakeData/FakeData';
+import ItemCascade from '../CustomMenuItem/CustomMenuItem';
+import { LeagesByCountry } from '../../../FakeData/FakeData';
 import classes from './LeaguesCascader.module.css';
-import '../MenuItems.css';
 
 const LeaguesCascader = (props) => {
   const cascader = useRef(null);

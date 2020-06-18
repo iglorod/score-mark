@@ -6,10 +6,9 @@ import { Menu, Dropdown, Avatar } from 'antd';
 import { UserOutlined, LoginOutlined, UserAddOutlined, LogoutOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import Profile from '../../../../Profile/Profile';
-import MenuItem from '../ItemCascade/ItemCascade';
+import MenuItem from '../../../../UI/CustomMenuItem/CustomMenuItem';
 import { createSrc } from '../../../../../utility/utility';
 import { logoutActionCreator } from '../../../../../store/authorization/actions';
-import '../MenuItems.css';
 
 const Auth = (props) => {
   const [visible, setVisible] = useState(false);
