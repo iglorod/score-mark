@@ -141,13 +141,17 @@
   background-color: #ff9c56 !important;
 }
 
-.ant-cascader-menus {
+.ant-cascader-menus, .ant-dropdown-menu, .ant-select-dropdown {
   color: #777 !important;
   font-weight: 400;
   font-family: "Varela Round", sans-serif;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px !important;
   background: rgb(250, 247, 253) !important;
   border-radius: 1px !important;
+}
+
+.ant-dropdown-menu span, .ant-select-dropdown {
+  font-size: 16px !important;
 }
 
 .ant-cascader-menu-item-expand {
@@ -162,7 +166,7 @@
   font-weight: 100;
 }
 
-.ant-cascader-menu-item:hover {
+.ant-cascader-menu-item:hover, .ant-dropdown-menu-item:hover, .ant-select-item-option:hover {
   color: #000 !important;
   background: transparent !important;
 }

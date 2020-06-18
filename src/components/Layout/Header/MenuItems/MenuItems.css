@@ -18,8 +18,17 @@
 }
 
 .profile-button {
-  margin-top: 50%;
-  border-radius: 5px;
-  transform: translateY(-20%);
+  font-family: 'Varela Round', sans-serif;
+  padding: 8px 15px;
   cursor: pointer;
+}
+
+.profile-name {
+  padding-left: 10px;
+  user-select: none;
+  transition: all .3s;
+}
+
+.profile-name:hover {
+  color: #f57922;
 }

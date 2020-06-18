@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { Menu, Dropdown } from 'antd';
-import { UserOutlined, LoginOutlined, UserAddOutlined, LogoutOutlined } from '@ant-design/icons';
+import { Menu, Dropdown, Avatar } from 'antd';
+import { UserOutlined, LoginOutlined, UserAddOutlined, LogoutOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 import Profile from '../../../../Profile/Profile';
-import ProfileIcon from '../../../../../assets/images/profile.png';
 import MenuItem from '../ItemCascade/ItemCascade';
+import { createSrc } from '../../../../../utility/utility';
 import { logoutActionCreator } from '../../../../../store/authorization/actions';
 import '../MenuItems.css';
 
@@ -39,7 +39,10 @@ const Auth = (props) => {
       visible={visible}
       onVisibleChange={handleVisibleChange}
     >
-      <img src={ProfileIcon} className={'profile-button'} height={40} alt={'profile'} />
+      <div className={'profile-button'}>
+        <Avatar size={36} src={createSrc(props.image, 'profile-images')} />
+        <span className={'profile-name'}>{props.displayName} <CaretDownOutlined /></span>
+      </div>
     </Dropdown>
   )
   if (!props.email) {
@@ -67,6 +70,7 @@ const Auth = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    image: state.auth.profilePicture,
     email: state.auth.email,
     displayName: state.auth.displayName,
   }

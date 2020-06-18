@@ -20,12 +20,15 @@
 
 .playerItem {
   color: #555 !important;
-  font-size: 12px;
   font-family: "Varela Round", sans-serif;
 }
 
 .playerItem:hover {
   color: #000 !important;
+}
+
+.playerItem > span {
+  padding-right: 10px;
 }
 
 .placeholder {

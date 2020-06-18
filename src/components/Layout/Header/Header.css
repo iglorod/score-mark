@@ -4,7 +4,7 @@
   height: 60px !important;
   line-height: normal !important;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0 20px !important;
   background: #fff !important;
 }
@@ -73,11 +73,6 @@
   }
   .auth-actions {
     padding: 0 5px;
-  }
-  .profile-button {
-    height: 25px;
-    margin-top: 80%;
-    transform: none;
   }
 }
 
