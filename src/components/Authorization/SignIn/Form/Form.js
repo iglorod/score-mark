@@ -71,10 +71,10 @@ const SignIn = (props) => {
 
   const validateMessages = {
     types: {
-      email: '${label} is not valid!',
+      email: '${name} is not valid!',
     },
     string: {
-      min: '${label} must be at least ${min} characters',
+      min: '${name} must be at least ${min} characters',
     },
   };
 

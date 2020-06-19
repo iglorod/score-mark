@@ -86,6 +86,7 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.SET_LOCAL_TOKEN_DATA: {
       return {
+        ...state,
         idToken: localStorage.getItem('idToken'),
         refreshToken: localStorage.getItem('refreshToken'),
         expiresIn: localStorage.getItem('expiresIn'),

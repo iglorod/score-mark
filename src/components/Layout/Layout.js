@@ -36,8 +36,8 @@ const LayoutComponent = (props) => {
       props.setMode(false, windowWidth);
     }
   }, 1500));
-
-  if (loading) return <ModalSpinner />
+  console.log(loading);
+  if (loading === true) return <ModalSpinner />
 
   return (
     <Layout className='main-layout'>

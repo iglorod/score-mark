@@ -7,8 +7,6 @@ const ComparePercents = ({ title, first, last }) => {
   let rightWidth = last || '0';
 
   if (leftWidth.toString() === '0' && rightWidth.toString() === '0') {
-    console.log(title)
-    console.log(+leftWidth, +rightWidth)
     return null;
   }
 

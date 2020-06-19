@@ -179,4 +179,8 @@
   border: 1px solid #f57922 !important;
 }
 
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #f57922 !important;
+}
+
 /* ant-design styles overwrite */

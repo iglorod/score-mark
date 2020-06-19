@@ -29,7 +29,7 @@ const FormPicture = (props) => {
         alt={props.name} />
     )
   }
-console.log(props.picture)
+
   return (
     <Form.Item
       name={props.name}

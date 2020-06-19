@@ -79,11 +79,11 @@ const SignUp = (props) => {
 
   const validateMessages = {
     types: {
-      email: '${label} is not valid!',
+      email: '${name} is not valid!',
     },
     string: {
-      min: '${label} must be at least ${min} characters',
-      max: '${label} must be not longer ${min} characters',
+      min: '${name} must be at least ${min} characters',
+      max: '${name} must be not longer ${min} characters',
     },
   };
 

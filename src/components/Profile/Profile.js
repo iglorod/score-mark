@@ -23,7 +23,7 @@ const Profile = (props) => {
         min: 4,
         max: 10,
       },
-      value: props.username,
+      value: '',
     },
   })
 
@@ -32,6 +32,14 @@ const Profile = (props) => {
       handleCancel();
     }
   }, [submitting])
+
+  useEffect(() => {
+    if (props.username) {
+      const userInputsClone = { ...userInputs };
+      userInputsClone.username.defaultValue = props.username;
+      setUserInputs({ ...userInputsClone });
+    }
+  }, [props.username])
 
   const onChangeHandler = (inputName, event) => {
     let newValue = event.target.value;

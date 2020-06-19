@@ -201,7 +201,6 @@ export const fetchLastUserDataActionCreator = () => {
       .then(response => response.data)
       .then(usersList => usersList.users[0])
       .then(userData => dispatch(loginActionCreator({ ...userData, profilePicture: userData.photoUrl })))
-      .then(() => dispatch(finishLoadingActionCreator()))
       .catch(error => dispatch(authErrorActionCreator(error)))
   }
 }

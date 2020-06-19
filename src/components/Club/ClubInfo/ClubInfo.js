@@ -36,7 +36,6 @@ const ClubInfo = (props) => {
   const checkWidth = useRef(throttle(() => {
     if (!logoEl.current) return;
     const elOffset = logoEl.current.getBoundingClientRect();
-    console.log(elOffset.top)
 
     if (elOffset.top < 70) {
       setLogoIsFixed(true);
@@ -47,8 +46,6 @@ const ClubInfo = (props) => {
   }, 300));
 
   if (!club) return <ModalSpinner />;
-
-  console.log('update')
 
   return (
         <div className={classes.clubInfo} ref={logoEl}>
