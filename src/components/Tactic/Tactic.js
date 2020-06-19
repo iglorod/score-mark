@@ -41,7 +41,7 @@ const Tactic = ({ loading, fixture, fetchFixtures, windowWidth }) => {
 
   return (
     <Row>
-      <Col md={{ span: 20, offset: 2 }} lg={{ span: 20, offset: 2 }} >
+      <Col xs={{ span: 22, offset: 1 }} md={{ span: 20, offset: 2 }} lg={{ span: 20, offset: 2 }} >
         <FixtureSummary />
 
         <Tabs

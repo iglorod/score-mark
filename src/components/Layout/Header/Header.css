@@ -3,6 +3,7 @@
   font-family: 'Varela Round', sans-serif;
   height: 60px !important;
   line-height: normal !important;
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 0 20px !important;
@@ -29,6 +30,7 @@
   height: 100%;
   padding: 0 20px;
   display: flex;
+  align-items: center;
 }
 
 .bottomLine {
@@ -91,5 +93,21 @@
   .ant-cascader-menus>div {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media(max-width: 1110px) {
+  .header {
+    height: 120px !important;
+  }
+  .header .search-bar {
+    align-items: end;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .header .menu-items {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }

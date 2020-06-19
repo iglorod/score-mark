@@ -1,7 +1,6 @@
 .searhPlayers {
   height: 30px;
   min-width: 400px;
-  margin: auto !important;
 }
 
 .searhPlayers input {
@@ -27,11 +26,18 @@
   color: #000 !important;
 }
 
-.playerItem > span {
+.playerItem>span {
   padding-right: 10px;
 }
 
 .placeholder {
   color: #000 !important;
   text-align: left;
+}
+
+@media(max-width: 1110px) {
+  .searhPlayers {
+    width: 100%;
+    min-width: unset;
+  }
 }
