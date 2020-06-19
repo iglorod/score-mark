@@ -14,6 +14,8 @@ export const LOGOUT = 'LOGOUT';
 
 //mode
 export const SET_MODE = 'SET_MODE';
+export const OPEN_COMMENTS = 'OPEN_COMMENTS';
+export const CLOSE_COMMENTS = 'CLOSE_COMMENTS';
 
 
 //fixture
