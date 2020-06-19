@@ -11,3 +11,8 @@
   text-align: right;
 }
 
+@media(max-width: 875px) {
+  .clubInfo, .clubInfoAway {
+    text-align: center;
+  }
+}

@@ -13,20 +13,24 @@ const Scorers = ({ clubId, events }) => {
   }, []);
 
   return (
-    scorers.map((event, index) => (
-      <div className={classes.scoredData} key={index}>
-        <span className={classes.minute}>{event.elapsed}{'\' '}</span>
-        <Link
-          to={{
-            pathname: '/player',
-            state: { id: event.player_id, }
-          }}
-          className={classes.scorer}
-        >
-          {event.player}
-        </Link>
-      </div>
-    ))
+    <div className={classes.scorers}>
+      {
+        scorers.map((event, index) => (
+          <div className={classes.scoredData} key={index}>
+            <span className={classes.minute}>{event.elapsed}{'\' '}</span>
+            <Link
+              to={{
+                pathname: '/player',
+                state: { id: event.player_id, }
+              }}
+              className={classes.scorer}
+            >
+              {event.player}
+            </Link>
+          </div>
+        ))
+      }
+    </div>
   )
 }
 

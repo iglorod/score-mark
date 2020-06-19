@@ -12,9 +12,7 @@ const clubCentre = ({ club, lineups, events, away }) => {
         <ClubLogo src={club.logo} />
         <ClubInfo club={club} lineups={lineups} away={away} />
       </div>
-      <div>
-        <Scorers clubId={club.team_id} events={events} />
-      </div>
+      <Scorers clubId={club.team_id} events={events} />
     </div>
   )
 }

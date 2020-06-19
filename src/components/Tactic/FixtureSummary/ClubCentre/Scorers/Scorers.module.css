@@ -9,3 +9,9 @@
 .scorer {
   color: rgb(86, 86, 86) !important;
 }
+
+@media(max-width: 590px) {
+  .scorers {
+    margin-top: 20px;
+  }
+}
