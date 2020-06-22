@@ -9,7 +9,7 @@ const HomeTeam = ({ fixture, winningPercent }) => {
   return (
     <div className={classes.clubData}>
       <div>
-        <img src={fixture.homeTeam.logo} width={70} alt={'home'} />
+        <img src={fixture.homeTeam.logo} className={classes.teamLogo} alt={'home'} />
       </div>
       <div className={classes.dateArea}>
         <div>

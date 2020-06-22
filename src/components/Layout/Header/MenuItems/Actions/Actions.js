@@ -27,7 +27,7 @@ const Actions = (props) => {
       pathname: '/fixtures',
       state: { date: date._d }
     })
- 
+
     closeCascader();
   }
 
@@ -57,7 +57,9 @@ const Actions = (props) => {
         openCascader={openCascader.bind(this, 1)}
         closeCascader={closeCascader} />
 
-      <ItemCascade text={'Date'} icon={<CalendarFilled />} onClick={toggleShowCalendar} />
+      <div className={'action-button'}>
+        <ItemCascade text={'Date'} icon={<CalendarFilled />} onClick={toggleShowCalendar} />
+      </div>
       <DatePicker
         open={showCalendar}
         className={'popup-input'}

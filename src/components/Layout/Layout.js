@@ -36,7 +36,7 @@ const LayoutComponent = (props) => {
       props.setMode(false, windowWidth);
     }
   }, 1500));
-  console.log(loading);
+
   if (loading === true) return <ModalSpinner />
 
   return (

@@ -11,6 +11,7 @@ import SubmitButton from '../../AuthUI/SubmitButton/SubmitButton';
 import BottomNote from '../../AuthUI/BottomNote/BottomNote';
 import Alert from '../../AuthUI/Alert/Alert';
 import DataInputs from '../../../UI/DataInputs/DataInputs';
+import { validateMessages } from '../../../../utility/validationMessages';
 import '../../Authorization.css';
 
 const SignIn = (props) => {
@@ -68,15 +69,6 @@ const SignIn = (props) => {
   const rememberMeToggle = () => {
     setRememberMe(prevState => !prevState);
   }
-
-  const validateMessages = {
-    types: {
-      email: '${name} is not valid!',
-    },
-    string: {
-      min: '${name} must be at least ${min} characters',
-    },
-  };
 
   if (props.email) return (
     <Redirect to={'/'} />

@@ -36,7 +36,7 @@ const AwayTeam = ({ fixture, winningPercent }) => {
         <div><Progress strokeWidth={5} percent={winningPercent.replace(/%/, '')} /></div>
       </div>
       <div>
-        <img src={fixture.awayTeam.logo} width={70} alt={'home'} />
+        <img src={fixture.awayTeam.logo}className={classes.teamLogo} alt={'home'} />
       </div>
     </div>
   )

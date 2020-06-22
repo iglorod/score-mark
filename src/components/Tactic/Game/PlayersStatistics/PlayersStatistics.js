@@ -9,26 +9,26 @@ const PlayersStatistics = (props) => {
   const [awayPlayerStats, setAwayPlayerStats] = useState({});
 
   useEffect(() => {
-    if (props.homePlayerId) {
+    if (props.homePlayer.player_id) {
       const teamsPlayersStats = props.fixture.players;
-      const playerStats = teamsPlayersStats.find(player => player.player_id === props.homePlayerId)
+      const playerStats = teamsPlayersStats.find(player => player.player_id === props.homePlayer.player_id)
 
       setHomePlayerStats(playerStats);
     } else {
       setHomePlayerStats({});
     }
-  }, [props.homePlayerId])
+  }, [props.homePlayer])
 
   useEffect(() => {
-    if (props.awayPlayerId) {
+    if (props.awayPlayer.player_id) {
       const teamsPlayersStats = props.fixture.players;
-      const playerStats = teamsPlayersStats.find(player => player.player_id === props.awayPlayerId)
+      const playerStats = teamsPlayersStats.find(player => player.player_id === props.awayPlayer.player_id)
 
       setAwayPlayerStats(playerStats);
     } else {
       setAwayPlayerStats({});
     }
-  }, [props.awayPlayerId])
+  }, [props.awayPlayer])
 
   return (
     <div className={classes.playersStatistics}>
@@ -71,8 +71,8 @@ const PlayersStatistics = (props) => {
 const mapStateToProps = (state) => {
   return {
     fixture: state.fxt.fixture,
-    homePlayerId: state.fxt.homePlayerId,
-    awayPlayerId: state.fxt.awayPlayerId,
+    homePlayer: state.fxt.homePlayer,
+    awayPlayer: state.fxt.awayPlayer,
   }
 }
 

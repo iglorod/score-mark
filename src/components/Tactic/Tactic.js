@@ -8,16 +8,22 @@ import Game from './Game/Game';
 import FixtureSummary from './FixtureSummary/FixtureSummary';
 import FixtureStats from './FixtureStats/FixtureStats';
 import FixtureEvents from './FixtureEvents/FixtureEvents';
-import { fetchFixturesActionCreator } from '../../store/fixture/actions';
+import { fetchFixturesActionCreator, clearFixtureActionCreator } from '../../store/fixture/actions';
 
-const Tactic = ({ loading, fixture, fetchFixtures, windowWidth }) => {
+const Tactic = (props) => {
   const [activeKey, setActiveKey] = useState('1');
   const [showMatchCentre, setShowMatchCentre] = useState(true);
   const { TabPane } = Tabs;
 
+  const { loading, fixture, windowWidth } = props;
+
   useEffect(() => {
-    fetchFixtures();
-  }, [])
+    props.fetchFixtures();
+    
+    return () => {
+      props.clearFixture();
+    }
+  }, [props.fetchFixtures, props.clearFixture])
 
   useEffect(() => {
     if (!showMatchCentre && activeKey === '1') {
@@ -86,6 +92,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchFixtures: () => { dispatch(fetchFixturesActionCreator()) },
+    clearFixture: () => { dispatch(clearFixtureActionCreator()) },
   }
 }
 

@@ -5,6 +5,7 @@
 .fixtureData {
   color: #fff !important;
   font-size: 12px;
+  white-space: nowrap;
   transition: all .1s;
 }
 

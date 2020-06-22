@@ -3,8 +3,8 @@ import * as actionTypes from '../actionTypes';
 const initialState = {
   fixture: null,
   loading: false,
-  homePlayerId: null,
-  awayPlayerId: null,
+  homePlayer: {},
+  awayPlayer: {},
 }
 
 const reducer = (state = initialState, action) => {
@@ -32,18 +32,24 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.SELECT_PLAYER: {
       let selectedPlayer = {
-        homePlayerId: state.homePlayerId === action.playerId ? null : action.playerId,
+        homePlayer: state.homePlayer.player_id === action.player.player_id ? {} : { ...action.player },
       }
 
       if (action.isAway) {
         selectedPlayer = {
-          awayPlayerId: state.awayPlayerId === action.playerId ? null : action.playerId,
+          awayPlayer: state.awayPlayer.player_id === action.player.player_id ? {} : { ...action.player },
         }
       }
 
       return {
         ...state,
         ...selectedPlayer,
+      }
+    }
+
+    case actionTypes.CLEAR_FIXTURE: {
+      return {
+        ...initialState,
       }
     }
 

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import PlayerItem from './PlayerItem/PlayerItem';
-import { selectPlayerActionCreator } from '../../../../../../store/fixture/actions';
+import { fetchPlayerDataActionCreator } from '../../../../../../store/fixture/actions';
 import classes from './PlayersColumn.module.css';
 
 const PlayersColumn = (props) => {
@@ -36,7 +36,7 @@ const PlayersColumn = (props) => {
             key={key}
             away={props.away}
             player={player}
-            selectedPlayerId={props.away ? props.awayPlayerId : props.homePlayerId}
+            selectedPlayerId={props.away ? props.awayPlayer.player_id : props.homePlayer.player_id}
             selectPlayer={props.selectPlayer.bind(this, player.player_id, props.away)} />
         ))
       }
@@ -46,14 +46,14 @@ const PlayersColumn = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    homePlayerId: state.fxt.homePlayerId,
-    awayPlayerId: state.fxt.awayPlayerId,
+    homePlayer: state.fxt.homePlayer,
+    awayPlayer: state.fxt.awayPlayer,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    selectPlayer: (playerId, isAway) => { dispatch(selectPlayerActionCreator(playerId, isAway)) }
+    selectPlayer: (playerId, isAway) => { dispatch(fetchPlayerDataActionCreator(playerId, isAway)) }
   }
 }
 

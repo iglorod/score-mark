@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Formation from './Formation/Formation';
-import Substitutes from './Substitutes/Substitutes';
+import Sidebar from './Sidebar/Sidebar';
 import PlayersStatistics from './PlayersStatistics/PlayersStatistics';
 import classes from './Game.module.css';
 
@@ -9,9 +9,9 @@ const Game = () => {
   return (
     <>
       <div className={classes.game}>
-        <Substitutes />
+        <Sidebar />
         <Formation />
-        <Substitutes away />
+        <Sidebar away />
       </div>
       <PlayersStatistics />
     </>

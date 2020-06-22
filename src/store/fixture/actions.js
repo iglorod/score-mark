@@ -1,6 +1,6 @@
 import * as actionTypes from '../actionTypes';
 
-import { fetchFixture } from '../../FakeData/FakeData';
+import { fetchFixture, fetchPlayerDetailsQuery } from '../../FakeData/FakeData';
 
 export const startLoadingActionCreator = () => {
   return {
@@ -21,11 +21,29 @@ export const setFixtureActionCreator = (fixture) => {
   }
 }
 
-export const selectPlayerActionCreator = (playerId, isAway) => {
+export const setSelectedPlayerActionCreator = (player, isAway) => {
   return {
     type: actionTypes.SELECT_PLAYER,
-    playerId,
+    player,
     isAway,
+  }
+}
+
+export const clearFixtureActionCreator = () => {
+  return {
+    type: actionTypes.CLEAR_FIXTURE,
+  }
+}
+
+export const fetchPlayerDataActionCreator = (playerId, isAway) => {
+  return dispatch => {
+    //axios.get(`https://api-football-v1.p.rapidapi.com/v2/players`)
+    // .then(response => response.data.api.results.players)
+    fetchPlayerDetailsQuery(playerId)
+      .then(response => response.api.results.players[0])
+      .then(player => { player.player_id = playerId; return player; })
+      .then(player => dispatch(setSelectedPlayerActionCreator(player, isAway)))
+      .catch(error => console.log(error))
   }
 }
 

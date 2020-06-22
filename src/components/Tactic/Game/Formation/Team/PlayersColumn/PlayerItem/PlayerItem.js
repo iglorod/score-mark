@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { Avatar } from 'antd';
 
@@ -15,7 +14,7 @@ const PlayerItem = (props) => {
     avatarClasses.push(classes.secondColorAvatar);
   }
 
-  if (selectedPlayerId !== null && selectedPlayerId !== player.player_id) {
+  if (selectedPlayerId >= 0 && selectedPlayerId !== player.player_id) {
     avatarClasses.push(classes.transparentPlayer);
   }
 
@@ -28,16 +27,8 @@ const PlayerItem = (props) => {
         {player.playerStats.rating}
       </Avatar>
       <div className={classes.playerData}>
-        <Link
-          to={{
-            pathname: '/player',
-            state: { id: player.player_id }
-          }}
-          className={classes.playerLink}
-        >
-          <span className={classes.playerNumber}>{player.number}. </span>
-          {player.player}
-        </Link>
+        <span className={classes.playerNumber}>{player.number}. </span>
+        {player.player}
       </div>
     </div>
   )

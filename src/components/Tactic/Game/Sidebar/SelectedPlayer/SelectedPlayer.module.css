@@ -1,0 +1,31 @@
+.selectedPlayer {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerIcon {
+  color: rgba(0, 0, 0, 0.65) !important;
+  font-size: 30px;
+}
+
+.playerName {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.playerName:hover, .playerIcon:hover {
+  color: #EB5B14 !important;
+}
+
+.playerPosition {
+  font-size: 12px;
+}
+
+.playerBirthPlace {
+  margin-top: 10px;
+}
+
+.playerBirthPlace>span {
+  padding-right: 5px;
+}
