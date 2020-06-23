@@ -1,0 +1,21 @@
+.bookmaker {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100px;
+  background: white;
+}
+
+.bookmakerName {
+  color: #000;
+  font-size: 22px;
+}
+
+.bookmakerPage {
+  /* color: #008BE0 !important; */
+  margin-top: 5px;
+}
+
+.bookmakerLink {
+  white-space: nowrap;
+}

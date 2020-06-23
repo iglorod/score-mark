@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { Spin, Tabs, Row, Col } from 'antd';
-import { BorderlessTableOutlined, BoxPlotOutlined, AudioOutlined } from '@ant-design/icons';
+import { BorderlessTableOutlined, BoxPlotOutlined, AudioOutlined, PieChartOutlined } from '@ant-design/icons';
 
 import Game from './Game/Game';
 import FixtureSummary from './FixtureSummary/FixtureSummary';
 import FixtureStats from './FixtureStats/FixtureStats';
 import FixtureEvents from './FixtureEvents/FixtureEvents';
+import FixtureOdds from './FixtureOdds/FixtureOdds';
 import { fetchFixturesActionCreator, clearFixtureActionCreator } from '../../store/fixture/actions';
 
 const Tactic = (props) => {
@@ -74,6 +75,13 @@ const Tactic = (props) => {
             tab={<><AudioOutlined /> {'Match Events'}</>}
           >
             <FixtureEvents />
+          </TabPane>
+
+          <TabPane
+            key='4'
+            tab={<><PieChartOutlined /> {'Match Odds'}</>}
+          >
+            <FixtureOdds />
           </TabPane>
         </Tabs>
       </Col>

@@ -5203,7 +5203,6 @@ export const searchPlayer = () => {
   })
 }
 
-
 export const fixturePredictions = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -5223,6 +5222,842 @@ export const fixturePredictions = () => {
                     'draws': '37%',
                     'away': '13%',
                   }
+                }
+              ]
+            }
+          }
+        }
+      )
+    }, 1000)
+  })
+}
+
+export const fetchFixtureOdds = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        {
+          api: {
+            results: {
+              odds: [
+                {
+                  'fixture': {
+                    'league_id': 213,
+                    'fixture_id': 121009,
+                    'updateAt': 1559700905,
+                  },
+                  'bookmakers': [
+                    {
+                      'bookmaker_id': 6,
+                      'bookmaker_name': 'Bwin',
+                      'bets': [
+                        {
+                          'label_id': 1,
+                          'label_name': 'Match Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.12',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '7.25',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '19.50',
+                            }
+                          ]
+                        },
+                        {
+                          'label_id': 3,
+                          'label_name': 'Second Half Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.33',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '3.50',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 7,
+                          'label_name': 'HT/FT Double',
+                          'values': [
+                            {
+                              'value': 'South Korea W/South Korea W',
+                              'odd': '29.00',
+                            },
+                            {
+                              'value': 'South Korea W/Draw',
+                              'odd': '31.00',
+                            },
+                            {
+                              'value': 'Draw/South Korea W',
+                              'odd': '34.00',
+                            },
+                            {
+                              'value': 'Draw/Draw',
+                              'odd': '9.25',
+                            },
+                            {
+                              'value': 'France W/France W',
+                              'odd': '1.55',
+                            },
+                            {
+                              'value': 'France W/Draw',
+                              'odd': '31.00',
+                            },
+                            {
+                              'value': 'Draw/France W',
+                              'odd': '3.70',
+                            },
+                            {
+                              'value': 'South Korea W/France W',
+                              'odd': '26.00',
+                            },
+                            {
+                              'value': 'France W/South Korea W',
+                              'odd': '151.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 8,
+                          'label_name': 'Both Teams Score',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '2.90',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '1.36',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 29,
+                          'label_name': 'Win to Nil - Home',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '1.50',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '2.40',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 10,
+                          'label_name': 'Exact Score',
+                          'values': [
+                            {
+                              'value': ' 0',
+                              'odd': '6.50',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '5.50',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '11.00',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '6.00',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '12.50',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '41.00',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '8.50',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '17.50',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '51.00',
+                            },
+                            {
+                              'value': ' 3',
+                              'odd': '101.00',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '10.50',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '15.00',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '36.00',
+                            },
+                            {
+                              'value': ' 3',
+                              'odd': '101.00',
+                            },
+                            {
+                              'value': ' 4',
+                              'odd': '201.00',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '31.00',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '101.00',
+                            },
+                            {
+                              'value': ' 3',
+                              'odd': '126.00',
+                            },
+                            {
+                              'value': ' 4',
+                              'odd': '201.00',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '51.00',
+                            },
+                            {
+                              'value': ' 3',
+                              'odd': '126.00',
+                            },
+                            {
+                              'value': ' 4',
+                              'odd': '201.00',
+                            },
+                            {
+                              'value': ' 3',
+                              'odd': '81.00',
+                            },
+                            {
+                              'value': ' 4',
+                              'odd': '201.00',
+                            },
+                            {
+                              'value': ' 4',
+                              'odd': '126.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 13,
+                          'label_name': 'First Half Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.48',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '2.75',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '13.50',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 20,
+                          'label_name': 'Double Chance - First Half',
+                          'values': [
+                            {
+                              'value': 'Home/Draw',
+                              'odd': '1.01',
+                            },
+                            {
+                              'value': 'Home/Away',
+                              'odd': '1.30',
+                            },
+                            {
+                              'value': 'Draw/Away',
+                              'odd': '2.25',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 34,
+                          'label_name': 'Both Teams Score - First Half',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '6.50',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '1.08',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 21,
+                          'label_name': 'Odd/Even',
+                          'values': [
+                            {
+                              'value': 'Odd',
+                              'odd': '1.83',
+                            },
+                            {
+                              'value': 'Even',
+                              'odd': '1.87',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 22,
+                          'label_name': 'Odd/Even First Half',
+                          'values': [
+                            {
+                              'value': 'Odd',
+                              'odd': '2.00',
+                            },
+                            {
+                              'value': 'Even',
+                              'odd': '1.72',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 38,
+                          'label_name': 'Exact Goals Number',
+                          'values': [
+                            {
+                              'value': 2,
+                              'odd': '4.10',
+                            },
+                            {
+                              'value': 3,
+                              'odd': '4.00',
+                            },
+                            {
+                              'value': 4,
+                              'odd': '5.00',
+                            },
+                            {
+                              'value': 1,
+                              'odd': '5.75',
+                            },
+                            {
+                              'value': 0,
+                              'odd': '10.50',
+                            },
+                            {
+                              'value': 5,
+                              'odd': '8.25',
+                            },
+                            {
+                              'value': 6,
+                              'odd': '15.00',
+                            },
+                            {
+                              'value': 7,
+                              'odd': '29.00',
+                            },
+                            {
+                              'value': 'more 8',
+                              'odd': '51.00',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      'bookmaker_id': 1,
+                      'bookmaker_name': '10Bet',
+                      'bets': [
+                        {
+                          'label_id': 1,
+                          'label_name': 'Match Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.06',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '6.50',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '14.75',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 2,
+                          'label_name': 'Home/Away',
+                          'values': [
+                            {
+                              'value': 'Away',
+                              'odd': '9.50',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 3,
+                          'label_name': 'Second Half Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.31',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '3.30',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '8.75',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 7,
+                          'label_name': 'HT/FT Double',
+                          'values': [
+                            {
+                              'value': 'South Korea W/South Korea W',
+                              'odd': '26.25',
+                            },
+                            {
+                              'value': 'South Korea W/Draw',
+                              'odd': '29.25',
+                            },
+                            {
+                              'value': 'Draw/South Korea W',
+                              'odd': '25.25',
+                            },
+                            {
+                              'value': 'Draw/Draw',
+                              'odd': '8.25',
+                            },
+                            {
+                              'value': 'France W/France W',
+                              'odd': '1.40',
+                            },
+                            {
+                              'value': 'France W/Draw',
+                              'odd': '26.25',
+                            },
+                            {
+                              'value': 'Draw/France W',
+                              'odd': '3.30',
+                            },
+                            {
+                              'value': 'South Korea W/France W',
+                              'odd': '26.25',
+                            },
+                            {
+                              'value': 'France W/South Korea W',
+                              'odd': '71.25',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 27,
+                          'label_name': 'Clean Sheet - Home',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '1.36',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '2.35',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 28,
+                          'label_name': 'Clean Sheet - Away',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '7.50',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 8,
+                          'label_name': 'Both Teams Score',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '2.65',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '1.41',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 10,
+                          'label_name': 'Exact Score',
+                          'values': [
+                            {
+                              'value': ' 0',
+                              'odd': '5.65',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '4.85',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '9.25',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '5.60',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '11.75',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '35.50',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '8.25',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '17.00',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '49.75',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '15.00',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '28.50',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '68.75',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '28.50',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '49.75',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '90.25',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '11.00',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '10.75',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '24.75',
+                            },
+                            {
+                              'value': ' 3',
+                              'odd': '91.50',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '43.75',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '86.75',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '60.50',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '55.75',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '78.25',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '86.75',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      'bookmaker_id': 7,
+                      'bookmaker_name': 'William Hill',
+                      'bets': [
+                        {
+                          'label_id': 1,
+                          'label_name': 'Match Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.10',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '7.00',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '19.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 2,
+                          'label_name': 'Home/Away',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.02',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '15.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 3,
+                          'label_name': 'Second Half Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.36',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '3.20',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '12.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 8,
+                          'label_name': 'Both Teams Score',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '2.75',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '1.40',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 10,
+                          'label_name': 'Exact Score',
+                          'values': [
+                            {
+                              'value': ' 0',
+                              'odd': '6.50',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '4.80',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '11.00',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '5.50',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '12.00',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '46.00',
+                            },
+                            {
+                              'value': ' 0',
+                              'odd': '8.00',
+                            },
+                            {
+                              'value': ' 1',
+                              'odd': '17.00',
+                            },
+                            {
+                              'value': ' 2',
+                              'odd': '56.00',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      'bookmaker_id': 8,
+                      'bookmaker_name': 'Bet365',
+                      'bets': [
+                        {
+                          'label_id': 1,
+                          'label_name': 'Match Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.12',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '7.50',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '21.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 2,
+                          'label_name': 'Home/Away',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.02',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '19.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 3,
+                          'label_name': 'Second Half Winner',
+                          'values': [
+                            {
+                              'value': 'Home',
+                              'odd': '1.30',
+                            },
+                            {
+                              'value': 'Draw',
+                              'odd': '3.50',
+                            },
+                            {
+                              'value': 'Away',
+                              'odd': '15.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 7,
+                          'label_name': 'HT/FT Double',
+                          'values': [
+                            {
+                              'value': 'South Korea W/South Korea W',
+                              'odd': '34.00',
+                            },
+                            {
+                              'value': 'South Korea W/Draw',
+                              'odd': '34.00',
+                            },
+                            {
+                              'value': 'Draw/South Korea W',
+                              'odd': '34.00',
+                            },
+                            {
+                              'value': 'Draw/Draw',
+                              'odd': '10.00',
+                            },
+                            {
+                              'value': 'France W/France W',
+                              'odd': '1.50',
+                            },
+                            {
+                              'value': 'France W/Draw',
+                              'odd': '29.00',
+                            },
+                            {
+                              'value': 'Draw/France W',
+                              'odd': '3.60',
+                            },
+                            {
+                              'value': 'South Korea W/France W',
+                              'odd': '26.00',
+                            },
+                            {
+                              'value': 'France W/South Korea W',
+                              'odd': '101.00',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 27,
+                          'label_name': 'Clean Sheet - Home',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '1.44',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '2.62',
+                            },
+                          ],
+                        },
+                        {
+                          'label_id': 28,
+                          'label_name': 'Clean Sheet - Away',
+                          'values': [
+                            {
+                              'value': 'Yes',
+                              'odd': '13.00',
+                            },
+                            {
+                              'value': 'No',
+                              'odd': '1.04',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ]
                 }
               ]
             }

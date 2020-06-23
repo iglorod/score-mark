@@ -1,0 +1,65 @@
+.oddItem {
+  display: flex;
+  width: 100%;
+}
+
+.oddName {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  font-style: italic;
+  width: 50%;
+}
+
+.oddName>div>div {
+  background: white;
+}
+
+.bookmakerOdds {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.odd {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.oddTitle, .oddLabels {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.oddTitle>div:first-child {
+  font-weight: 500;
+}
+
+.oddValueProgress {
+  width: 100%;
+  padding: 0 10px 0;
+}
+
+.oddValueProgress>div {
+  vertical-align: -5px;
+}
+
+.oddValue {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 20px;
+}
+
+@media(max-width: 580px) {
+  .oddItem {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  .oddName, .bookmakerOdds {
+    width: 100%;
+  }
+  .oddName>div>div {
+    border: 1px dashed rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
+}
