@@ -48,7 +48,7 @@ const ClubInfo = (props) => {
   if (!club) return <ModalSpinner />;
 
   return (
-        <div className={classes.clubInfo} ref={logoEl}>
+    <div className={classes.clubInfo} ref={logoEl}>
       <div
         className={classes.logoContainer}
         style={{ position: logoIsFixed ? 'sticky' : 'initial', top: logoIsFixed ? '50px' : 0 }}

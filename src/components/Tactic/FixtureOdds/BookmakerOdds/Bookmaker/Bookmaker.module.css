@@ -1,9 +1,10 @@
 .bookmaker {
+  position: sticky;
+  top: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100px;
-  background: white;
 }
 
 .bookmakerName {
@@ -18,4 +19,8 @@
 
 .bookmakerLink {
   white-space: nowrap;
+}
+
+.offset {
+  height: 100%;
 }

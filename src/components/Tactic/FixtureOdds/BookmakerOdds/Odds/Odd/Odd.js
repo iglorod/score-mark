@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Progress, Divider, Affix } from 'antd';
+import { Progress, Divider } from 'antd';
 
 import classes from './Odd.module.css';
 
@@ -15,9 +15,7 @@ const Odd = ({ odd }) => {
   return (
     <>
       <div className={classes.oddItem}>
-        <Affix className={classes.oddName} offsetTop={10}>
-          <div>{odd.label_name}</div>
-        </Affix>
+        <div className={classes.oddName}>{odd.label_name}</div>
         <div className={classes.bookmakerOdds}>
           {
             odd.values.map((item, index) => (

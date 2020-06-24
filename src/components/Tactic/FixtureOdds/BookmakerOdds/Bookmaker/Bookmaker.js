@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { Affix } from 'antd';
 import { ExportOutlined } from '@ant-design/icons';
 
 import classes from './Bookmaker.module.css';
 
 const Bookmaker = ({ bookmakerName }) => {
   return (
-    <Affix offsetTop={10}>
+    <div>
       <div className={classes.bookmaker}>
         <div className={classes.bookmakerName}>{bookmakerName}</div>
         <div className={classes.bookmakerPage}>
@@ -20,7 +19,7 @@ const Bookmaker = ({ bookmakerName }) => {
           </a>
         </div>
       </div>
-    </Affix>
+    </div>
   )
 }
 

@@ -183,4 +183,8 @@
   background: #f57922 !important;
 }
 
+.ant-tabs.ant-tabs-top.ant-tabs-line {
+  overflow: unset !important;
+}
+
 /* ant-design styles overwrite */

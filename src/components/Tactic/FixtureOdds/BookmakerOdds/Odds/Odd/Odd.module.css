@@ -8,10 +8,9 @@
   font-size: 16px;
   font-style: italic;
   width: 50%;
-}
-
-.oddName>div>div {
-  background: white;
+  height: min-content;
+  position: sticky;
+  top: 10px;
 }
 
 .bookmakerOdds {
